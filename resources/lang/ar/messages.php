@@ -1,0 +1,94 @@
+<?php
+return [
+  'site_name'     => 'متجري',
+  'home'          => 'الرئيسية',
+  'categories'    => 'إستكشف تصنيفاتنا الصناعية',
+  'sub-title-cat' => 'استعرض تصنيفاتنا المتخصصة واختر الحلول المثالية لخطوط الانتاج والمشاريع الصناعية',
+  'subcategories' => 'الاقسام الفرعية',
+  'products'      => 'المنتجات',
+  'details'       => 'التفاصيل',
+  'dark_mode'     => 'الوضع الداكن',
+  'light_mode'    => 'الوضع الفاتح',
+  'lang_ar'       => 'عربي',
+  'lang_en'       => 'إنجليزي',
+  'explore'       => 'اكتشف الآن',
+  'features'      => 'مميزاتنا',
+  'contact'       => 'اتصل بنا',
+  'seamless'      => 'الدفع السلس',
+  'delivery'      => 'توصيل مجاني',
+  'quality'       => 'جودة مميزة',
+  'cta_title'     => 'جاهزون للترقية؟',
+  'cta_text'      => 'انضم إلى آلاف العملاء السعداء حول العالم',
+  'get_started'   => 'ابدأ الآن',
+  'browse items'   => 'عرض التصنيفات',
+  'view products' => 'عرض المنتجات',
+  'cats' => 'الاقسام',
+  'latest_products' => 'أحدث المنتجات',
+  "latest_products_subtext" => "إستكشف أحدث منتجاتنا المميزة الآن",
+ // Features Page
+  'our_features' => 'مميزاتنا',
+  'features_description' => 'نقدم لكم أفضل الخدمات والمميزات لتجربة تسوق مثالية',
+  'quality_products' => 'منتجات عالية الجودة',
+  'quality_products_desc' => 'نقدم منتجات مختارة بعناية وذات جودة عالية لضمان رضا عملائنا',
+  'fast_delivery' => 'توصيل سريع',
+  'fast_delivery_desc' => 'خدمة توصيل سريعة وموثوقة لجميع طلباتكم في أي مكان',
+  'customer_support' => 'دعم العملاء',
+  'customer_support_desc' => 'فريق دعم متخصص متواجد على مدار الساعة لمساعدتكم',
+  'secure_payments' => 'دفع آمن',
+  'secure_payments_desc' => 'طرق دفع متعددة وآمنة لحماية معاملاتكم المالية',
+  'easy_returns' => 'إرجاع سهل',
+  'easy_returns_desc' => 'سياسة إرجاع مرنة وسهلة لراحة عملائنا',
+  'wide_selection' => 'تشكيلة واسعة',
+  'wide_selection_desc' => 'مجموعة متنوعة من المنتجات لتلبية جميع احتياجاتكم',
+  'explore_products' => 'إستكشف منتجاتنا',
+  'Explore More Options'=>'إستكشف المزيد من الخيارات',
+  'Select a subcategory to view products'=>'اختر عنصر لعرض المنتجات الخاصه به',
+  'searchProduct' =>'البحث عن منتج...',
+  'Quick Links' => 'روابط سريعة',
+  'contact us' => 'تواصل معنا',
+  'Phone' => 'الهاتف',
+  'Email' => 'الايميل',
+  'Address' => 'العنوان',
+  'Follow Us' => 'تابعونا',
+  'hero-footer' => 'إستكشف أفضل المنتجات معنا. جودة مضمونة، ورضا عملائنا مضمون',
+  'hero-mainPage' => 'بوابتك نحو الكفاءة الصناعية',
+  'hero-mainPage-sub' => 'نوفر لك آلات عالية الجودة وخطوط إنتاج مصممة لتلبية متطلبات الصناعة الحديثة بكفاءة وموثوقية تامة',
+  'Description' => 'الوصف',
+  'Contact via WhatsApp'=>'للتواصل عبر الواتس اب',
+  'View More'=>'عرض المزيد',
+  'view cat' => 'عرض الأصناف',
+  'view all' => 'عرض الكل',
+  'product error'=>'تم تخطي منتج بسبب بيانات غير مكتملة:',
+  'searching' => 'جاري البحث...',
+
+  // Contact Page
+  'contact_us' => 'تواصل معنا',
+  'get_in_touch' => 'ابقى على تواصل',
+  'contact_us_subheader' => 'نحن هنا للمساعدة. أرسل لنا رسالة وسنعود إليك في أقرب وقت ممكن.',
+  'contact_information' => 'معلومات التواصل',
+  'contact_info_desc' => 'املأ النموذج أو تواصل معنا مباشرة عبر القنوات أدناه.',
+  'our_address' => '123 شارع المثال، مدينة الرياض، المملكة العربية السعودية',
+  'call_us' => '+966 12 345 6789',
+  'email_us' => 'contact@myshop.com',
+  'full_name' => 'الاسم الكامل',
+  'email_address' => 'البريد الإلكتروني',
+  'subject' => 'الموضوع',
+  'message' => 'رسالتك',
+  'send_message' => 'إرسال الرسالة',
+
+  // SweetAlert
+  'service_unavailable' => 'الخدمة غير متوفرة',
+  'service_unavailable_text' => 'عذراً، هذه الميزة قيد التطوير حالياً وستكون متاحة قريباً.',
+  'ok' => 'حسناً',
+
+  'Explore our selection of premium products'=>'إستكشف مجموعتنا من المنتجات الحصرية',
+  'no product'=>'لايوجد منتجات حاليا...'
+
+
+
+
+
+
+
+
+];
