@@ -13,7 +13,7 @@ class PageController extends Controller
     /**
      * عنوان الـ API الجديد
      */
-    private string $apiBase = 'http://127.0.0.1:8001';
+    private string $apiBase = 'https://gbl-shop-serverside-master-x8lils.laravel.cloud';
 
     /**
      * يفك تشفير الـ Base64 ID ويتأكد أنه رقم صالح
