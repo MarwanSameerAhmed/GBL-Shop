@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
 
-  
+
   <link
     href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
     rel="stylesheet"
@@ -47,14 +47,14 @@
 
 
  <style>
-  /* Loader transitions */
+
   #page-loader {
     transition: opacity 0.3s ease;
   }
   #page-loader.hidden {
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease 0.1s; /* تحسين UX */
+    transition: opacity 0.3s ease 0.1s;
   }
 </style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -111,7 +111,7 @@
         <li><a href="{{ route('home') }}" class="hover:text-primary transition-colors">{{ __('messages.home') }}</a></li>
         <li><a href="{{ route('categories') }}" class="hover:text-primary transition-colors">{{ __('messages.cats') }}</a></li>
         <li><a href="{{ route('features') }}" class="hover:text-primary transition-colors">{{ __('messages.features') }}</a></li>
-        {{-- <li><a href="{{ route('contact') }}" class="hover:text-primary transition-colors">{{ __('Contact') }}</a></li> --}}
+      <li><a href="{{ route('contact') }}" class="hover:text-primary transition-colors">{{ __('messages.contact') }}</a></li>
       </ul>
     </div>
 
