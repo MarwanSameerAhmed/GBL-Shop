@@ -73,7 +73,7 @@
 
         <div data-aos="zoom-in" class="w-full md:w-1/2 -mt-16 flex justify-center">
           @php
-            $lottie = "https://lottie.host/9e9557ae-325a-4cb4-985e-b64682ccd89d/uY9LOjhFxr.lottie";
+            $lottie = "https://lottie.host/139f4e7f-fac2-43b7-93b1-4ef287830e1d/CDoBWk2ej9.lottie";
           @endphp
 
           <dotlottie-player
