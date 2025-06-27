@@ -50,37 +50,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Cairo:wght@200..1000&family=Tajawal:wght@200;300;400;500;700;800;900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet"> --}}
 
 
-  <style>
-    /* Loader transitions */
-    #page-loader {
-      transition: opacity 0.3s ease;
-    }
-    #page-loader.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-  </style>
+ <style>
+  /* Loader transitions */
+  #page-loader {
+    transition: opacity 0.3s ease;
+  }
+  #page-loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease 0.1s; /* تحسين UX */
+  }
+</style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 <body class="font-sans flex flex-col min-h-screen antialiased  bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200 ">
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <!-- Loader -->
-  <div
-    id="page-loader"
-    class="fixed inset-0 z-[99999] flex items-center justify-center
-           bg-white/90 dark:bg-gray-900/90 pointer-events-auto
-           opacity-100"
-  >
-
-    <div class="flex flex-col items-center">
-      <svg class="animate-spin h-12 w-12 text-primary dark:text-white mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-        <circle class="opacity-25 stroke-current" cx="12" cy="12" r="10" stroke-width="4"></circle>
-        <path class="opacity-75 fill-current" d="M4 12a8 8 0 018-8v8z"></path>
-      </svg>
-      <span class="text-gray-600 dark:text-gray-400 font-medium">Loading…</span>
-    </div>
+ <!-- Loader -->
+<div
+  id="page-loader"
+  class="fixed inset-0 z-[99999] flex items-center justify-center
+         bg-white/90 dark:bg-gray-900/90 pointer-events-auto
+         opacity-100"
+>
+  <div class="flex flex-col items-center">
+    <svg class="animate-spin h-12 w-12 text-primary dark:text-white mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M11.983 13.505a1.505 1.505 0 100-3.01 1.505 1.505 0 000 3.01zM20.488 13.35a8.02 8.02 0 00.035-2.703l1.635-1.274a.5.5 0 00.125-.631l-1.548-2.683a.5.5 0 00-.604-.23l-1.928.775a7.976 7.976 0 00-2.344-1.35L15.19 2.565a.5.5 0 00-.493-.395h-3.394a.5.5 0 00-.493.395l-.266 1.888a7.972 7.972 0 00-2.343 1.35l-1.928-.775a.5.5 0 00-.604.23L2.373 8.742a.5.5 0 00.125.631l1.635 1.274a8.02 8.02 0 000 2.703l-1.635 1.274a.5.5 0 00-.125.631l1.548 2.683a.5.5 0 00.604.23l1.928-.775a7.976 7.976 0 002.344 1.35l.266 1.888a.5.5 0 00.493.395h3.394a.5.5 0 00.493-.395l.266-1.888a7.972 7.972 0 002.343-1.35l1.928.775a.5.5 0 00.604-.23l1.548-2.683a.5.5 0 00-.125-.631l-1.635-1.274z" />
+</svg>
+    <span class="text-gray-600 dark:text-gray-400 font-medium">Loading…</span>
   </div>
+</div>
 
   @include('partials.navbar')
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -164,28 +164,33 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
 @stack('scripts')
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const loader = document.getElementById('page-loader');
-      loader.classList.add('hidden');
-    });
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const loader = document.getElementById('page-loader');
+    loader.classList.add('hidden');
+  });
 
-    function showLoader() {
-      const loader = document.getElementById('page-loader');
-      loader.classList.remove('hidden');
-      requestAnimationFrame(() => loader.classList.remove('opacity-0'));
+  function showLoader() {
+    const loader = document.getElementById('page-loader');
+    loader.classList.remove('hidden');
+    requestAnimationFrame(() => loader.classList.remove('opacity-0'));
+  }
+
+  document.addEventListener('click', function(e) {
+    const a = e.target.closest('a');
+    if (a && a.origin === window.location.origin && !a.hasAttribute('target') && !a.href.endsWith('#')) {
+      const url = new URL(a.href);
+      if (url.pathname === window.location.pathname && url.hash) return;
+      showLoader();
     }
+  });
 
-    document.addEventListener('click', function(e) {
-      const a = e.target.closest('a');
-      if (a && a.origin === window.location.origin && !a.hasAttribute('target') && !a.href.endsWith('#')) {
-        const url = new URL(a.href);
-        if (url.pathname === window.location.pathname && url.hash) return;
-        showLoader();
-      }
-    });
-
-
-  </script>
+  window.addEventListener('pageshow', (event) => {
+    const loader = document.getElementById('page-loader');
+    if (loader) {
+      loader.classList.add('hidden');
+    }
+  });
+</script>
 </body>
 </html>
