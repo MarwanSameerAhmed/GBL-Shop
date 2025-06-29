@@ -107,10 +107,10 @@
             $url       = route('products',      $encodedId);
           }
 
-          // unified placeholder image
+        
      $filename = data_get($sub, 'image');
-  $imageUrl = $filename
-    ? asset('storage/images/' . $filename)
+  $image = $filename ? ltrim($filename, '/') : null;
+    $imageUrl= $filename ? asset( $image)
    : asset('images/placeholder.png');
         @endphp
 
