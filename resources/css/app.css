@@ -20,3 +20,41 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+@layer components {
+    .myThumbsSwiper .swiper-button-next,
+    .myThumbsSwiper .swiper-button-prev {
+        @apply w-8 h-8 bg-white/80 dark:bg-gray-800/80 rounded-full shadow-lg backdrop-blur-sm;
+        --swiper-navigation-size: 1.25rem; /* 20px */
+        color: theme('colors.primary');
+        transition: opacity 0.2s ease;
+    }
+
+    .myThumbsSwiper .swiper-button-next:after,
+    .myThumbsSwiper .swiper-button-prev:after {
+        font-size: var(--swiper-navigation-size) !important;
+        font-weight: bold;
+    }
+
+    .myThumbsSwiper .swiper-button-disabled {
+        @apply opacity-0 pointer-events-none;
+    }
+
+    /* On small screens, the arrows might be too far out or too large. */
+    /* Let's make sure they are visible and well-positioned. */
+    @media (max-width: 640px) {
+        .myThumbsSwiper .swiper-button-next,
+        .myThumbsSwiper .swiper-button-prev {
+            /* Make them a bit smaller on mobile */
+            @apply w-7 h-7;
+            --swiper-navigation-size: 1rem; /* 16px */
+        }
+
+        .myThumbsSwiper .swiper-button-prev {
+            left: 2px !important;
+        }
+        .myThumbsSwiper .swiper-button-next {
+            right: 2px !important;
+        }
+    }
+}
