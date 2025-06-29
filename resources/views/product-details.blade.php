@@ -120,10 +120,10 @@ $thumbs = array_map(fn($img) => asset(ltrim($img, '/')), array_slice($allImages,
   <div class="swiper myThumbsSwiper">
     <div class="swiper-wrapper">
       <template x-for="(img, i) in thumbs" :key="i">
-        <div class="swiper-slide">
+        <div class="swiper-slide !w-auto p-2">
           <button @click="main = img"
-                  :class="{ 'ring-2 ring-offset-2 ring-offset-gray-100 dark:ring-offset-gray-800 ring-primary': main === img }"
-                  class="block w-full h-24 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-accent transition-all duration-300 focus:outline-none">
+                  :class="{ 'ring-2 ring-offset-2 ring-primary ring-offset-gray-50 dark:ring-offset-gray-900': main === img }"
+                  class="block w-24 h-24 rounded-lg overflow-hidden border border-transparent focus:outline-none transition-all duration-300">
             <img :src="img" class="w-full h-full object-cover" alt="Product thumbnail">
           </button>
         </div>
@@ -131,14 +131,16 @@ $thumbs = array_map(fn($img) => asset(ltrim($img, '/')), array_slice($allImages,
     </div>
 
     <!-- Navigation Arrows -->
-    <div class="swiper-button-next group !absolute !top-1/2 !-translate-y-1/2 !right-0 z-10">
-        <div class="bg-white/70 dark:bg-gray-900/70 shadow-lg rounded-full p-1.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-white dark:group-hover:bg-gray-900 backdrop-blur-sm">
-            <svg class="w-5 h-5 text-primary dark:text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+    <div class="absolute top-1/2 -translate-y-1/2 -right-3 z-10 flex flex-col space-y-2">
+        <div class="swiper-button-prev group !static !w-auto !h-auto cursor-pointer">
+            <div class="bg-white/80 dark:bg-gray-900/80 shadow-lg rounded-full p-1.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-white dark:group-hover:bg-gray-900 backdrop-blur-sm">
+                <svg class="w-5 h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+            </div>
         </div>
-    </div>
-    <div class="swiper-button-prev group !absolute !top-1/2 !-translate-y-1/2 !left-0 z-10">
-        <div class="bg-white/70 dark:bg-gray-900/70 shadow-lg rounded-full p-1.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-white dark:group-hover:bg-gray-900 backdrop-blur-sm">
-            <svg class="w-5 h-5 text-primary dark:text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+        <div class="swiper-button-next group !static !w-auto !h-auto cursor-pointer">
+            <div class="bg-white/80 dark:bg-gray-900/80 shadow-lg rounded-full p-1.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-white dark:group-hover:bg-gray-900 backdrop-blur-sm">
+                <svg class="w-5 h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+            </div>
         </div>
     </div>
   </div>
@@ -200,27 +202,15 @@ $thumbs = array_map(fn($img) => asset(ltrim($img, '/')), array_slice($allImages,
       setTimeout(() => {
         if (document.querySelector('.myThumbsSwiper')) {
           new Swiper('.myThumbsSwiper', {
-            loop: true,
-            spaceBetween: 10,
-            slidesPerView: 3.5, // For mobile
+            loop: false,
+            spaceBetween: 0,
+            slidesPerView: 'auto',
             freeMode: true,
             watchSlidesProgress: true,
             navigation: {
               nextEl: '.swiper-button-next',
               prevEl: '.swiper-button-prev',
             },
-            breakpoints: {
-              // when window width is >= 640px
-              640: {
-                slidesPerView: 4.5,
-                spaceBetween: 12
-              },
-              // when window width is >= 1024px
-              1024: {
-                slidesPerView: 5.5,
-                spaceBetween: 15
-              }
-            }
           });
         }
       }, 300);
