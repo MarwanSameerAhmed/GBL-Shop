@@ -49,10 +49,20 @@
             $url = '#';
           }
 
+    //       $path = data_get($product, 'image');
+
+    // $pat = $path ? ltrim($path, '/') : null;
+
+    // $thumb = $path
+    //     ? asset($pat)
+    //     : asset('images/placeholder.png');
+
+
+
   $filename = data_get($cat, 'image');
-  $imageUrl = $filename
-    ? asset('storage/images/' . $filename)
-    : asset('images/default-category.png');
+  $image = $filename ? ltrim($filename, '/') : null;
+  $imageUrl=$filename? asset($image) :asset('images/placeholder.png');
+
         @endphp
 
         <a href="{{ $url }}" class="block w-full max-w-[240px] group">
