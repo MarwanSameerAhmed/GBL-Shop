@@ -124,15 +124,12 @@
         $route     = data_get($product, 'route', '');
         $prodId    = Str::after($route, '/Item/');
 
-    // 1) خُذ المسار الكامل من الـ JSON
-    $path = data_get($product, 'image');              // e.g. "/storage/images/xxx.jpeg"
+    $path = data_get($product, 'image');
 
-    // 2) نزّل الـ slash الأولي (asset('storage/...') تتوقع مسار بدون slash أولي)
     $pat = $path ? ltrim($path, '/') : null;
 
-    // 3) دلّيل asset() إما على المسار لو موجود أو على placeholder
     $thumb = $path
-        ? asset($pat)                               // => http://127.0.0.1:8001/storage/images/xxx.jpeg
+        ? asset($pat)                              
         : asset('images/placeholder.png');
       @endphp
 

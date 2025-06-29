@@ -21,12 +21,10 @@
     $allImages = [];
 }
 
-// المسار الرئيسي
 $mainImage = isset($allImages[0])
     ? asset(ltrim($allImages[0], '/'))
     : asset('images/placeholder.png');
 
-// الصور المصغرة
 $thumbs = array_map(fn($img) => asset(ltrim($img, '/')), array_slice($allImages, 1));
 
  $invoice  = "═══════ 🧾 *فاتورة نجمي* ═══════%0A%0A";
