@@ -120,19 +120,27 @@ $thumbs = array_map(fn($img) => asset(ltrim($img, '/')), array_slice($allImages,
   <div class="swiper myThumbsSwiper">
     <div class="swiper-wrapper">
       <template x-for="(img, i) in thumbs" :key="i">
-        <div class="swiper-slide !w-auto !m-0 !p-1">
+        <div class="swiper-slide">
           <button @click="main = img"
-                  :class="{ 'ring-4 ring-primary border-primary': main === img }"
-                  class="w-28 h-28 rounded-xl overflow-hidden border-2 border-gray-300 hover:border-primary transition duration-200">
-            <img :src="img" class="w-full h-full object-cover">
+                  :class="{ 'ring-2 ring-offset-2 ring-offset-gray-100 dark:ring-offset-gray-800 ring-primary': main === img }"
+                  class="block w-full h-24 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-accent transition-all duration-300 focus:outline-none">
+            <img :src="img" class="w-full h-full object-cover" alt="Product thumbnail">
           </button>
         </div>
       </template>
     </div>
 
-    <!-- الأسهم -->
-    <div class="swiper-button-prev text-primary"></div>
-    <div class="swiper-button-next text-primary"></div>
+    <!-- Navigation Arrows -->
+    <div class="swiper-button-next group !absolute !top-1/2 !-translate-y-1/2 !right-0 z-10">
+        <div class="bg-white/70 dark:bg-gray-900/70 shadow-lg rounded-full p-1.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-white dark:group-hover:bg-gray-900 backdrop-blur-sm">
+            <svg class="w-5 h-5 text-primary dark:text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+        </div>
+    </div>
+    <div class="swiper-button-prev group !absolute !top-1/2 !-translate-y-1/2 !left-0 z-10">
+        <div class="bg-white/70 dark:bg-gray-900/70 shadow-lg rounded-full p-1.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-white dark:group-hover:bg-gray-900 backdrop-blur-sm">
+            <svg class="w-5 h-5 text-primary dark:text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+        </div>
+    </div>
   </div>
 </div>
   @endif
@@ -192,16 +200,26 @@ $thumbs = array_map(fn($img) => asset(ltrim($img, '/')), array_slice($allImages,
       setTimeout(() => {
         if (document.querySelector('.myThumbsSwiper')) {
           new Swiper('.myThumbsSwiper', {
-            slidesPerView: 5,
-            spaceBetween: 8,
+            loop: true,
+            spaceBetween: 10,
+            slidesPerView: 3.5, // For mobile
+            freeMode: true,
+            watchSlidesProgress: true,
             navigation: {
               nextEl: '.swiper-button-next',
               prevEl: '.swiper-button-prev',
             },
             breakpoints: {
-              640: { slidesPerView: 3 },
-              768: { slidesPerView: 3 },
-              1024: { slidesPerView: 3 },
+              // when window width is >= 640px
+              640: {
+                slidesPerView: 4.5,
+                spaceBetween: 12
+              },
+              // when window width is >= 1024px
+              1024: {
+                slidesPerView: 5.5,
+                spaceBetween: 15
+              }
             }
           });
         }
