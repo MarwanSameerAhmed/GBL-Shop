@@ -131,16 +131,14 @@ $thumbs = array_map(fn($img) => asset(ltrim($img, '/')), array_slice($allImages,
     </div>
 
     <!-- Navigation Arrows -->
-    <div class="absolute top-1/2 -translate-y-1/2 -right-3 z-10 flex flex-col space-y-2">
-        <div class="swiper-button-prev group !static !w-auto !h-auto cursor-pointer">
-            <div class="bg-white/80 dark:bg-gray-900/80 shadow-lg rounded-full p-1.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-white dark:group-hover:bg-gray-900 backdrop-blur-sm">
-                <svg class="w-5 h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
-            </div>
+    <div class="swiper-button-next group !absolute !top-1/2 !-translate-y-1/2 !right-0 z-10">
+        <div class="bg-white/70 dark:bg-gray-900/70 shadow-lg rounded-full p-1 transition-all duration-300 group-hover:scale-110 group-hover:bg-white dark:group-hover:bg-gray-900 backdrop-blur-sm">
+            <svg class="w-4 h-4 text-gray-800 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg>
         </div>
-        <div class="swiper-button-next group !static !w-auto !h-auto cursor-pointer">
-            <div class="bg-white/80 dark:bg-gray-900/80 shadow-lg rounded-full p-1.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-white dark:group-hover:bg-gray-900 backdrop-blur-sm">
-                <svg class="w-5 h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
-            </div>
+    </div>
+    <div class="swiper-button-prev group !absolute !top-1/2 !-translate-y-1/2 !left-0 z-10">
+        <div class="bg-white/70 dark:bg-gray-900/70 shadow-lg rounded-full p-1 transition-all duration-300 group-hover:scale-110 group-hover:bg-white dark:group-hover:bg-gray-900 backdrop-blur-sm">
+            <svg class="w-4 h-4 text-gray-800 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"></path></svg>
         </div>
     </div>
   </div>
