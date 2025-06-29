@@ -192,16 +192,17 @@ $thumbs = array_map(fn($img) => asset(ltrim($img, '/')), array_slice($allImages,
       setTimeout(() => {
         if (document.querySelector('.myThumbsSwiper')) {
           new Swiper('.myThumbsSwiper', {
-            slidesPerView: 5,
+            slidesPerView: 3, // نعرض 3 صور في الشاشات الصغيرة
             spaceBetween: 8,
             navigation: {
               nextEl: '.swiper-button-next',
               prevEl: '.swiper-button-prev',
             },
             breakpoints: {
-              640: { slidesPerView: 3 },
-              768: { slidesPerView: 3 },
-              1024: { slidesPerView: 3 },
+              // للشاشات الأكبر من 1024 بكسل، نعرض 5
+              1024: { 
+                slidesPerView: 5
+              },
             }
           });
         }
