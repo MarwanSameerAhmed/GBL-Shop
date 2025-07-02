@@ -217,12 +217,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const id    = product.route.split('/').pop();
 
     let imageUrl;
-    const assetBaseUrl = '{{ asset("") }}';
+    // Use rtrim to ensure assetBaseUrl doesn't have a trailing slash, then add it back manually
+    // This creates a consistent and correct full image URL.
+    const assetBaseUrl = '{{ rtrim(asset('/'), '/') }}';
     const placeholderUrl = `{{ asset('images/placeholder.png') }}`;
 
     if (product.image && product.image.trim() !== '') {
+        // Remove leading slash from image path to prevent double slashes in the URL
         const imagePath = product.image.startsWith('/') ? product.image.substring(1) : product.image;
-        imageUrl = `${assetBaseUrl}storage/${imagePath}`;
+        imageUrl = `${assetBaseUrl}/${imagePath}`;
     } else {
         imageUrl = placeholderUrl;
     }
@@ -233,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   transition-transform duration-300 hover:scale-105">
         <div class="w-32 h-full flex-shrink-0">
           <img src="${imageUrl}" alt="${name}"
-               onerror="this.src='${placeholderUrl}';"
+               onerror="this.onerror=null; this.src='${placeholderUrl}';"
                class="w-full h-full object-cover" />
         </div>
         <div class="flex-1 p-3 sm:p-4">
