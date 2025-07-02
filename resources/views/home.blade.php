@@ -38,7 +38,7 @@
   {{-- Hero full‑width --}}
   <section
     id="hero"
-    class="relative min-h-screen lg:h-screen overflow-visible bg-gradient-to-r from-primary to-accent"
+    class="relative min-h-screen lg:h-screen overflow-visible bg-white dark:bg-gray-900"
   >
     <div class="absolute inset-0"></div>
     <div
@@ -47,23 +47,24 @@
       <div class="flex flex-col md:flex-row items-start gap-8">
         <div data-aos="fade-right" class="text-black dark:text-white">
           <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
-            {{ __('messages.hero-mainPage') }}
+            @php
+            $heroText = __('messages.hero-mainPage');
+            $lastWord = strrchr($heroText, ' ');
+            $firstPart = substr($heroText, 0, -strlen($lastWord));
+          @endphp
+          {!! $firstPart !!}
+          <span style="color: #fcc85e;">{!! $lastWord !!}</span>
           </h1>
           <p class="text-lg md:text-xl mb-8 opacity-90 text-gray-800 dark:text-gray-300">
             {{ __('messages.hero-mainPage-sub') }}
           </p>
           <a
             href="{{ route('categories') }}"
-            class="inline-flex items-center bg-white dark:bg-gray-800
-                   text-primary dark:text-primary font-semibold
-                   py-3 px-10 rounded-full shadow-lg
-                   transition-transform duration-300 hover:scale-105
-                   hover:bg-gray-100 dark:hover:bg-gray-700
-                   focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+            class="inline-flex items-center bg-[#fcc85e] text-gray-900 font-semibold py-3 px-10 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-[#fdd17a] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#fcc85e]"
           >
             {{ __('messages.cats') }}
             <svg xmlns="http://www.w3.org/2000/svg"
-                 class="ml-3 h-5 w-5 text-primary dark:text-primary animate-bounce transform {{ app()->getLocale() === 'ar' ? 'rotate-180' : '' }}"
+                 class="ml-3 h-5 w-5 text-gray-900 animate-bounce transform {{ app()->getLocale() === 'ar' ? 'rotate-180' : '' }}"
                  fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M4 12h16m-6-6l6 6-6 6"/>
