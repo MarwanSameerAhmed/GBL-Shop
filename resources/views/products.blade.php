@@ -137,7 +137,7 @@
         class="
           group
           flex
-          {{ $isRtl ? 'flex-row-reverse text-right' : 'flex-row text-left' }}
+          {{ $isRtl ? 'text-right' : 'text-left' }}
           bg-white dark:bg-gray-800
           rounded-2xl
           shadow-lg
