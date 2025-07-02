@@ -12,8 +12,16 @@
 
   <section id="categories-header" class="py-25 bg-white dark:bg-gray-900 rounded-2xl">
     <div class="container mx-auto px-6 text-center">
-      <h1 class="text-3xl md:text-4xl font-extrabold mb-1 bg-clip-text text-black bg-gradient-to-r from-primary to-accent dark:text-white">
-        {{ __('messages.categories') }}
+      <h1 class="text-3xl md:text-4xl font-extrabold mb-1 text-black dark:text-white">
+        @php
+          $title = __('messages.categories');
+          $last_space_pos = strrpos($title, ' ');
+        @endphp
+        @if ($last_space_pos !== false)
+          {{ substr($title, 0, $last_space_pos) }} <span style="color: #fcc85e;">{{ substr($title, $last_space_pos + 1) }}</span>
+        @else
+          <span style="color: #fcc85e;">{{ $title }}</span>
+        @endif
       </h1>
       <div class="mx-auto h-1 w-16 bg-primary dark:bg-accent rounded-full mb-4 animate-pulse-slow"></div>
       <p class="text-gray-600 dark:text-gray-400 max-w-lg mx-auto">
