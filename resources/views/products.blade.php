@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (product.image && product.image.trim() !== '') {
         const imagePath = product.image.startsWith('/') ? product.image.substring(1) : product.image;
-        imageUrl = `${assetBaseUrl}${imagePath}`;
+        imageUrl = `${assetBaseUrl}storage/${imagePath}`;
     } else {
         imageUrl = placeholderUrl;
     }
