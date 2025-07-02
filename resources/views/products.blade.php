@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const onErrorLogic = `this.onerror=null; this.src='${errorPlaceholder}';`;
 
     return `
-      <div class="group flex {{ $isRtl ? 'flex-row-reverse text-right' : 'flex-row text-left' }}
+      <div class="group flex {{ $isRtl ? 'text-right' : 'text-left' }}
                   bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden w-full
                   transition-transform duration-300 hover:scale-105">
         <div class="w-32 h-full flex-shrink-0">
