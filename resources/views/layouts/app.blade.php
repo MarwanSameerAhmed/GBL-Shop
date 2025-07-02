@@ -96,8 +96,8 @@
     <!-- Logo & Description -->
     <div class="space-y-4">
       <a href="{{ route('home') }}" class="inline-block">
-        <img src="{{ asset('images/ChatGPT Image Jun 14, 2025, 04_55_00 PM.png') }}" alt="{{ __('messages.site_name') }}" class="h-10 dark:hidden">
-        <img src="{{ asset('images/ChatGPT Image Jun 14, 2025, 04_55_00 PM.png') }}" alt="{{ __('messages.site_name') }}" class="h-10 hidden dark:inline-block">
+        <img src="{{ asset('images/WhatsApp_Image_2025-07-01_at_9.33.32_PM-removebg-preview.png') }}" alt="{{ __('messages.site_name') }}" class="h-10 dark:hidden">
+        <img src="{{ asset('images/ChatGPT Image 2 يوليو 2025، 12_55_08 م.png') }}" alt="{{ __('messages.site_name') }}" class="h-10 hidden dark:inline-block">
       </a>
       <p class="text-sm">
         {{ __('messages.hero-footer') }}
