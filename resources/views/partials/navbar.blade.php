@@ -44,7 +44,7 @@
   <div class="max-w-7xl mx-auto px-6 lg:px-8 h-full flex items-center justify-between">
     {{-- Logo --}}
     <a href="{{ route('home') }}" class="flex items-center space-x-2 hover:scale-105 transition-transform duration-200">
-      <img src="/images/ChatGPT Image 2 يوليو 2025، 12_55_08 م.png" alt="Logo" class="h-25 w-25">
+      <img src="/images/ChatGPT Image 2 يوليو 2025، 12_55_08 م.png" alt="Logo" class="h-20 w-20">
       {{-- <span class="text-2xl font-extrabold text-gray-900 dark:text-gray-100">
         {{ __('messages.site_name') }}
       </span> --}}
