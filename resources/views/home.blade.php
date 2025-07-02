@@ -80,7 +80,8 @@
             src="{{ $lottie }}"
             background="transparent"
             speed="1"
-            style="width: 400px; height: 400px;"
+            style="width: 450px; height: 450px;"
+            loop
             autoplay
           ></dotlottie-player>
         </div>
