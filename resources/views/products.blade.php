@@ -216,26 +216,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const desc  = lang === 'ar' ? product.short_description : product.en_short_description;
     const id    = product.route.split('/').pop();
 
-    // --- Start: Replicating the exact PHP logic from the main card --- 
     const assetBaseUrl = '{{ rtrim(asset('/'), '/') }}';
     const initialPlaceholder = `{{ asset('images/placeholder.png') }}`;
     const errorPlaceholder = `{{ asset('images/ChatGPT Image Jun 14, 2025, 04_55_00 PM.png') }}`.replace(/\\/g, '/');
 
     let imageUrl;
-    const path = product.image; // Matches: $path = data_get($product, 'image');
-    
-    // Matches: $pat = $path ? ltrim($path, '/') : null;
-    const pat = path ? (path.startsWith('/') ? path.substring(1) : path) : null;
+    const path = product.image;
 
-    // Matches: $thumb = $path ? asset($pat) : asset('images/placeholder.png');
     if (path && path.trim() !== '') {
-        imageUrl = `${assetBaseUrl}/${pat}`;
+        // Check if the path is already a full URL. If so, use it directly.
+        // Otherwise, construct the full URL from the relative path.
+        if (path.startsWith('http://') || path.startsWith('https://')) {
+            imageUrl = path;
+        } else {
+            const pat = path.startsWith('/') ? path.substring(1) : path;
+            imageUrl = `${assetBaseUrl}/${pat}`;
+        }
     } else {
+        // Use the initial placeholder if no image is defined.
         imageUrl = initialPlaceholder;
     }
-    // --- End: Replicating the exact PHP logic ---
 
-    // This part replicates the `onerror` attribute from the main card's <img> tag
     const onErrorLogic = `this.onerror=null; this.src='${errorPlaceholder}';`;
 
     return `
