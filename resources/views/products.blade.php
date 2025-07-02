@@ -217,13 +217,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const id    = product.route.split('/').pop();
 
     let imageUrl;
-    // Use rtrim to ensure assetBaseUrl doesn't have a trailing slash, then add it back manually
-    // This creates a consistent and correct full image URL.
     const assetBaseUrl = '{{ rtrim(asset('/'), '/') }}';
-    const placeholderUrl = `{{ asset('images/placeholder.png') }}`;
+    // Using the specific placeholder from the main card, and normalizing slashes for URL.
+    const placeholderUrl = `{{ asset('images/ChatGPT Image Jun 14, 2025, 04_55_00 PM.png') }}`.replace(/\\/g, '/');
 
     if (product.image && product.image.trim() !== '') {
-        // Remove leading slash from image path to prevent double slashes in the URL
         const imagePath = product.image.startsWith('/') ? product.image.substring(1) : product.image;
         imageUrl = `${assetBaseUrl}/${imagePath}`;
     } else {
