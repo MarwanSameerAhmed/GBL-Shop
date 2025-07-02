@@ -129,7 +129,7 @@
     $pat = $path ? ltrim($path, '/') : null;
 
     $thumb = $path
-        ? asset($pat)                              
+        ? asset($pat)
         : asset('images/placeholder.png');
       @endphp
 
@@ -216,17 +216,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const desc  = lang === 'ar' ? product.short_description : product.en_short_description;
     const id    = product.route.split('/').pop();
 
-    let imageUrl;
+    // --- Start: Replicating the exact PHP logic from the main card --- 
     const assetBaseUrl = '{{ rtrim(asset('/'), '/') }}';
-    // Using the specific placeholder from the main card, and normalizing slashes for URL.
-    const placeholderUrl = `{{ asset('images/ChatGPT Image Jun 14, 2025, 04_55_00 PM.png') }}`.replace(/\\/g, '/');
+    const initialPlaceholder = `{{ asset('images/placeholder.png') }}`;
+    const errorPlaceholder = `{{ asset('images/ChatGPT Image Jun 14, 2025, 04_55_00 PM.png') }}`.replace(/\\/g, '/');
 
-    if (product.image && product.image.trim() !== '') {
-        const imagePath = product.image.startsWith('/') ? product.image.substring(1) : product.image;
-        imageUrl = `${assetBaseUrl}/${imagePath}`;
+    let imageUrl;
+    const path = product.image; // Matches: $path = data_get($product, 'image');
+    
+    // Matches: $pat = $path ? ltrim($path, '/') : null;
+    const pat = path ? (path.startsWith('/') ? path.substring(1) : path) : null;
+
+    // Matches: $thumb = $path ? asset($pat) : asset('images/placeholder.png');
+    if (path && path.trim() !== '') {
+        imageUrl = `${assetBaseUrl}/${pat}`;
     } else {
-        imageUrl = placeholderUrl;
+        imageUrl = initialPlaceholder;
     }
+    // --- End: Replicating the exact PHP logic ---
+
+    // This part replicates the `onerror` attribute from the main card's <img> tag
+    const onErrorLogic = `this.onerror=null; this.src='${errorPlaceholder}';`;
 
     return `
       <div class="group flex {{ $isRtl ? 'flex-row-reverse text-right' : 'flex-row text-left' }}
@@ -234,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   transition-transform duration-300 hover:scale-105">
         <div class="w-32 h-full flex-shrink-0">
           <img src="${imageUrl}" alt="${name}"
-               onerror="this.onerror=null; this.src='${placeholderUrl}';"
+               onerror="${onErrorLogic}"
                class="w-full h-full object-cover" />
         </div>
         <div class="flex-1 p-3 sm:p-4">
