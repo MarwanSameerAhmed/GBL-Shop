@@ -24,6 +24,7 @@ return [
   'sub-title-cat' => 'Browse specialized categories to find the perfect solution for your manufacturing or production needs.
 ',
 'cats' => 'Explore More',
+'catsNav' => 'Categories',
  'latest_products' => 'Latest Products',
  "latest_products_subtext" => "Browse our newest premium picks today",
  // Features Page

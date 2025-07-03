@@ -23,6 +23,7 @@ return [
   'browse items'   => 'عرض التصنيفات',
   'view products' => 'عرض المنتجات',
   'cats' => 'إستكشف المزيد',
+  'catsNav' => 'الاقسام',
   'latest_products' => 'أحدث المنتجات',
   "latest_products_subtext" => "إستكشف أحدث منتجاتنا المميزة الآن",
  // Features Page

@@ -109,7 +109,7 @@
       <h3 class="text-lg font-semibold mb-4">{{ __('messages.Quick Links') }}</h3>
       <ul class="space-y-2 text-sm">
         <li><a href="{{ route('home') }}" class="hover:text-primary transition-colors">{{ __('messages.home') }}</a></li>
-        <li><a href="{{ route('categories') }}" class="hover:text-primary transition-colors">{{ __('messages.cats') }}</a></li>
+        <li><a href="{{ route('categories') }}" class="hover:text-primary transition-colors">{{ __('messages.catsNav') }}</a></li>
         <li><a href="{{ route('features') }}" class="hover:text-primary transition-colors">{{ __('messages.features') }}</a></li>
       <li><a href="{{ route('contact') }}" class="hover:text-primary transition-colors">{{ __('messages.contact') }}</a></li>
       </ul>
