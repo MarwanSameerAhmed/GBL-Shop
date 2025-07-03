@@ -100,11 +100,8 @@
             $firstPart = substr($heroText, 0, -strlen($lastWord));
           @endphp
           {!! $firstPart !!}
-          <span class="shimmer-text relative inline-block overflow-hidden"
-          style="color: #fcc85e; vertical-align: baseline; line-height: inherit; font-size: inherit;">
-        {!! $lastWord !!}
-    </span>
-              </h1>
+          <span class="shimmer-text relative inline-block overflow-hidden" style="color: #fcc85e;">{!! $lastWord !!}</span>
+          </h1>
           <p class="text-lg md:text-xl mb-8 opacity-90 text-gray-800 dark:text-gray-300 max-w-xl">
             {{ __('messages.hero-mainPage-sub') }}
           </p>
