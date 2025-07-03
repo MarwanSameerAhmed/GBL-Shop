@@ -16,7 +16,7 @@
 
         {{-- Page Header --}}
         <div class="text-center mb-16" data-aos="fade-up">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#fcc85e] dark:text-[#fcc85e] tracking-tight">
                 {{ __('messages.get_in_touch') }}
             </h1>
             <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-300">
@@ -107,7 +107,7 @@
                         {{-- Submit Button --}}
                         <div class="sm:col-span-2 mt-8">
                             <button type="submit"
-                                    class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-lg text-base font-medium text-black dark-text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary
+                                    class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-lg text-base font-medium text-black dark:text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary
                                            dark:shadow-primary/50 transition-all duration-300 transform hover:scale-105">
                                 {{ __('messages.send_message') }}
                             </button>
