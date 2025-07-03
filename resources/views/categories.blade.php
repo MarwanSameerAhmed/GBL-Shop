@@ -95,9 +95,9 @@
 
             @if($hasSubs)
               <span
-                class="absolute top-3 left-3 px-2.5 py-1 rounded-lg text-xs font-medium
-                       bg-indigo-500/90 text-white backdrop-blur-md shadow-xs
-                       border border-indigo-600/50">
+                class="absolute top-3 left-3 px-2.5 py-1 rounded-lg text-xs font-bold
+                       bg-[#fcc85e]/90 text-gray-900 backdrop-blur-md shadow-xs
+                       border border-yellow-500/50">
                 {{ __('messages.browse items') }}
               </span>
             @endif
@@ -115,11 +115,11 @@
                 </div>
                 <div
                   class="p-2 rounded-full
-                         bg-white/10 dark:bg-zinc-800/50
+                         bg-[#fcc85e]/80 dark:bg-[#fcc85e]/90
                          backdrop-blur-md
-                         transition-colors duration-300 group-hover:bg-white/20 dark:group-hover:bg-zinc-700/50">
+                         transition-colors duration-300 group-hover:bg-[#fcc85e]">
                   <svg xmlns="http://www.w3.org/2000/svg"
-                       class="w-5 h-5 text-white group-hover:-rotate-12 transition-transform duration-300 transform"
+                       class="w-5 h-5 text-gray-900 group-hover:-rotate-12 transition-transform duration-300 transform"
                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                           d="M17 7l-10 10M7 7h10v10" />
