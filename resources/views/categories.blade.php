@@ -11,11 +11,11 @@
 @section('content')
 <style>
   .glowing-shadow {
-    box-shadow: 0 0 15px 5px rgba(252, 200, 94, 0.3), 0 0 25px 10px rgba(252, 200, 94, 0.2);
+    box-shadow: 0 0 15px 0px rgba(252, 200, 94, 0.15);
     transition: box-shadow 0.3s ease-in-out;
   }
   .glowing-shadow:hover {
-    box-shadow: 0 0 20px 8px rgba(252, 200, 94, 0.4), 0 0 35px 15px rgba(252, 200, 94, 0.25);
+    box-shadow: 0 0 20px 2px rgba(252, 200, 94, 0.2);
   }
 </style>
 
