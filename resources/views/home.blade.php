@@ -45,7 +45,7 @@
       class="relative z-10 max-w-7xl mx-auto px-6 pt-32 lg:pt-50 pb-6"
     >
       <div class="flex flex-col md:flex-row items-start gap-8">
-        <div data-aos="fade-right" class="text-black dark:text-white">
+        <div data-aos="fade-right" class="text-black dark:text-white relative z-20">
           <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
             @php
             $heroText = __('messages.hero-mainPage');
