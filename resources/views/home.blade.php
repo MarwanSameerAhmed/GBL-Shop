@@ -93,19 +93,14 @@
     >
       <div class="flex flex-col md:flex-row items-start gap-8">
         <div data-aos="fade-right" class="text-black dark:text-white relative z-20">
-          <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight max-w-2xl flex items-baseline flex-wrap">
+          <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight max-w-2xl">
             @php
                 $heroText = __('messages.hero-mainPage');
-                $lastSpacePos = strrpos($heroText, ' ');
-                if ($lastSpacePos !== false) {
-                    $lastWord = substr($heroText, $lastSpacePos + 1);
-                    $firstPart = substr($heroText, 0, $lastSpacePos);
-                } else {
-                    $lastWord = $heroText;
-                    $firstPart = '';
-                }
+                $lastWord = strrchr($heroText, ' ');
+                $firstPart = substr($heroText, 0, -strlen($lastWord));
             @endphp
-            <span>{!! $firstPart !!}</span>&nbsp;<span style="color: #fcc85e;">{!! $lastWord !!}</span>
+            {!! $firstPart !!}
+            <span class="shimmer-text relative inline-block overflow-hidden" style="color: #fcc85e; vertical-align: text-bottom;">{!! trim($lastWord) !!}</span>
           </h1>
           <p class="text-lg md:text-xl mb-8 opacity-90 text-gray-800 dark:text-gray-300 max-w-xl">
             {{ __('messages.hero-mainPage-sub') }}
