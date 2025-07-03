@@ -74,7 +74,7 @@
   {{-- Header Section --}}
   <section id="entity-header" class="py-6 bg-white dark:bg-gray-900 rounded-lg mb-8">
     <div class="container mx-auto px-6 text-center">
-      <h1 class="text-2xl md:text-3xl font-bold bg-clip-text text-black bg-gradient-to-r from-primary to-accent dark:from-accent dark:to-primary">
+      <h1 class="text-2xl md:text-3xl font-bold bg-clip-text text-black bg-gradient-to-r from-primary to-accent dark:text-white">
         {{ __('messages.Explore More Options') }}
       </h1>
          {{-- <h1 class="text-2xl md:text-3xl font-bold bg-clip-text text-black bg-gradient-to-r from-primary to-accent dark:from-accent dark:to-primary">
