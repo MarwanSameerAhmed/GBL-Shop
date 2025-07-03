@@ -74,8 +74,19 @@
   {{-- Header Section --}}
   <section id="entity-header" class="py-6 bg-white dark:bg-gray-900 rounded-lg mb-8">
     <div class="container mx-auto px-6 text-center">
-      <h1 class="text-2xl md:text-3xl font-bold bg-clip-text text-black bg-gradient-to-r from-primary to-accent dark:text-white">
-        {{ __('messages.Explore More Options') }}
+      <h1 class="text-2xl md:text-3xl font-bold text-black dark:text-white">
+        @php
+          $headerText = __('messages.Explore More Options');
+          $lastSpacePos = strrpos($headerText, ' ');
+          if ($lastSpacePos !== false) {
+              $lastWord = substr($headerText, $lastSpacePos + 1);
+              $firstPart = substr($headerText, 0, $lastSpacePos);
+          } else {
+              $lastWord = $headerText;
+              $firstPart = '';
+          }
+        @endphp
+        {!! $firstPart !!} <span class="text-[#fcc85e]">{!! $lastWord !!}</span>
       </h1>
          {{-- <h1 class="text-2xl md:text-3xl font-bold bg-clip-text text-black bg-gradient-to-r from-primary to-accent dark:from-accent dark:to-primary">
          {{' « '.$categoryName.' » ' }}
@@ -131,10 +142,10 @@
               {{ $subName }}
             </h3>
             {{-- caption --}}
-            <p class="mt-1 flex items-center text-sm font-medium text-gray-500 dark:text-gray-400 truncate">
+            <p class="mt-1 flex items-center text-sm font-medium truncate {{ $hasSubs ? 'text-gray-500 dark:text-gray-400' : 'text-[#fcc85e]' }}">
               {{ $hasSubs ? __('messages.view cat') : __('messages.view products') }}
               <svg xmlns="http://www.w3.org/2000/svg"
-                   class="h-4 w-4 inline-block ml-1 text-gray-400 animate-bounce transform {{ app()->getLocale() === 'ar' ? 'rotate-180' : '' }}"
+                   class="h-4 w-4 inline-block ml-1 animate-bounce transform {{ app()->getLocale() === 'ar' ? 'rotate-180' : '' }} {{ $hasSubs ? 'text-gray-400' : 'text-[#fcc85e]' }}"
                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M9 5l7 7-7 7"/>
