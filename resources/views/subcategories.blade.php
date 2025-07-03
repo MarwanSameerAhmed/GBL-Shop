@@ -127,7 +127,7 @@
 
           <div class="px-4 py-2 flex flex-col">
             {{-- title --}}
-            <h3 class="text-lg font-bold text-[#fcc85e] dark:text-gray-100 truncate">
+            <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 truncate">
               {{ $subName }}
             </h3>
             {{-- caption --}}
