@@ -57,6 +57,18 @@
     animation-delay: 2s;
   }
 
+  .shimmer-text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(110deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 60%);
+    animation: shimmer 4s infinite;
+    animation-delay: 2.5s;
+  }
+
   @keyframes subtle-pulse-right {
     0%, 100% {
       transform: translateX(0);
@@ -88,7 +100,7 @@
             $firstPart = substr($heroText, 0, -strlen($lastWord));
           @endphp
           {!! $firstPart !!}
-          <span style="color: #fcc85e;">{!! $lastWord !!}</span>
+          <span class="shimmer-text relative inline-block overflow-hidden" style="color: #fcc85e;">{!! $lastWord !!}</span>
           </h1>
           <p class="text-lg md:text-xl mb-8 opacity-90 text-gray-800 dark:text-gray-300">
             {{ __('messages.hero-mainPage-sub') }}
