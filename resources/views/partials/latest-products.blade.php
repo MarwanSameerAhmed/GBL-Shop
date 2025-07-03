@@ -7,14 +7,14 @@
     {{-- === Header === --}}
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
         <div class="flex items-center space-x-3 rtl:space-x-reverse">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-500 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#fcc85e] animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l.35 1.08a1 1 0 00.95.69h1.137c.969 0 1.371 1.24.588 1.81l-.92.67a1 1 0 00-.364 1.118l.35 1.08c.3.921-.755 1.688-1.54 1.118l-.92-.67a1 1 0 00-1.176 0l-.92.67c-.785.57-1.84-.197-1.54-1.118l.35-1.08a1 1 0 00-.364-1.118l-.92-.67c-.783-.57-.38-1.81.588-1.81h1.137a1 1 0 00.95-.69l.35-1.08zM17 12.588l.962-.005a1 1 0 00.472-1.812l-.825-.56a1 1 0 01-.364-1.118l.35-1.08c.3-.921-.755-1.688-1.54-1.118L15.1 7.73a1 1 0 01-1.176 0l-.92-.67c-.785-.57-1.84.197-1.54 1.118l.35 1.08a1 1 0 01-.364 1.118l-.92.67c-.783-.57-.38 1.81.588 1.81h.962" />
             </svg>
-            <h2 class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+            <h2 class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#fcc85e] to-orange-500">
                 {{ __('messages.latest_products') }}
             </h2>
         </div>
-        <div class="hidden sm:block flex-grow border-t-2 border-indigo-100 dark:border-indigo-800 mx-6"></div>
+        <div class="hidden sm:block flex-grow border-t-2 border-yellow-200 dark:border-yellow-700/50 mx-6"></div>
         <p class="mt-4 sm:mt-0 text-gray-600 dark:text-gray-400 italic">
             {{ __('messages.latest_products_subtext') }}
         </p>
@@ -59,13 +59,13 @@
               @endphp
               <div class="swiper-slide h-auto pb-8">
                 <div data-aos="fade-up" data-aos-delay="{{ ($loop->index % 4) * 100 }}" class="h-full">
-                  <a href="{{ route('productDetails', $prodId) }}" class="group block bg-white dark:bg-gray-800/50 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl dark:hover:shadow-indigo-500/20 hover:-translate-y-1.5 border border-gray-200 dark:border-gray-700 h-full flex flex-col">
+                  <a href="{{ route('productDetails', $prodId) }}" class="group block bg-white dark:bg-gray-800/50 hover:bg-yellow-50/50 dark:hover:bg-[#fcc85e]/10 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl dark:hover:shadow-[#fcc85e]/20 hover:-translate-y-1.5 border border-gray-200 dark:border-gray-700 h-full flex flex-col">
                     <div class="overflow-hidden relative">
                       <img src="{{ $thumb }}" alt="{{ $name }}" onerror="this.onerror=null; this.src='{{ asset('images/placeholder.png') }}';" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out">
                       <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                     <div class="p-4 flex-grow flex flex-col">
-                      <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1 truncate group-hover:text-indigo-600 dark:group-hover:text-purple-400 transition-colors duration-300">
+                      <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1 truncate group-hover:text-orange-500 dark:group-hover:text-[#fcc85e] transition-colors duration-300">
                         {{ $name }}
                       </h3>
                       @if($short_desc)
@@ -75,7 +75,7 @@
                       @endif
                       <div class="mt-auto pt-3">
                         @if(isset($product['price']) && $product['price'] > 0)
-                          <p class="text-indigo-600 dark:text-purple-400 font-bold text-xl">
+                          <p class="font-bold text-xl text-[#e7b450] dark:text-[#fcc85e]">
                             ${{ number_format($product['price']) }}
                           </p>
                         @else
@@ -94,8 +94,8 @@
 
         {{-- Navigation & Pagination --}}
         <div class="swiper-pagination !bottom-0"></div>
-        <div class="swiper-button-prev text-indigo-500 after:!text-2xl !-left-2 disabled:opacity-0 transition-opacity"></div>
-        <div class="swiper-button-next text-indigo-500 after:!text-2xl !-right-2 disabled:opacity-0 transition-opacity"></div>
+        <div class="swiper-button-prev text-[#fcc85e] after:!text-2xl !-left-2 disabled:opacity-0 transition-opacity"></div>
+        <div class="swiper-button-next text-[#fcc85e] after:!text-2xl !-right-2 disabled:opacity-0 transition-opacity"></div>
       </div>
     @else
       <div class="text-center py-16">
