@@ -105,7 +105,7 @@ $thumbs = array_map(fn($img) => asset(ltrim($img, '/')), array_slice($allImages,
   </ol>
 </nav>
 
-  <section class="py-7">
+  <section class="py-6">
     <div class="container mx-auto px-6 lg:flex lg:gap-12 {{ $isRtl ? 'lg:flex-row-reverse text-right' : 'lg:flex-row text-left' }}"
          data-aos="fade-up"
          x-data='{"main":"{{ $mainImage }}","thumbs":@json($thumbs)}'>

@@ -10,7 +10,7 @@
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
     {{-- Hero Section --}}
     <div class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+        <h1 class="text-4xl md:text-5xl font-bold text-[#fcc85e] dark:text-[#fcc85e] mb-4">
             {{ __('messages.our_features') }}
         </h1>
         <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -43,7 +43,7 @@
             <div class="mb-5 relative inline-flex">
                 <div class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center shadow-md group-hover:shadow-primary/50
                            group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                    <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-8 h-8 text-black dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ $feature['icon'] }}"/>
                     </svg>
                 </div>
@@ -61,7 +61,7 @@
     {{-- Call to Action --}}
     <div class="mt-16 text-center">
         <a href="{{ route('categories') }}"
-           class="inline-flex items-center px-8 py-3 text-lg font-medium text-white bg-primary
+           class="inline-flex items-center px-8 py-3 text-lg font-medium text-black bg-[#fcc85e] dark:text-white
                   rounded-xl hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2
                   focus:ring-primary transition-all duration-300 ease-in-out transform hover:scale-105">
             {{ __('messages.explore_products') }}
