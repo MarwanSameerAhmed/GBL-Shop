@@ -22,7 +22,7 @@ return [
   'get_started'   => 'ابدأ الآن',
   'browse items'   => 'عرض التصنيفات',
   'view products' => 'عرض المنتجات',
-  'cats' => 'الاقسام',
+  'cats' => 'إستكشف المزيد',
   'latest_products' => 'أحدث المنتجات',
   "latest_products_subtext" => "إستكشف أحدث منتجاتنا المميزة الآن",
  // Features Page
