@@ -65,7 +65,7 @@
                       <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                     <div class="p-4 flex-grow flex flex-col">
-                      <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1 truncate group-hover:text-orange-500 dark:group-hover:text-[#fcc85e] transition-colors duration-300">
+                      <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1 truncate group-hover:text-[#fcc85e] dark:group-hover:text-[#fcc85e] transition-colors duration-300">
                         {{ $name }}
                       </h3>
                       @if($short_desc)
