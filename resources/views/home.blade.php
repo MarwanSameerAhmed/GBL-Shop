@@ -56,7 +56,11 @@
     animation: shimmer 4s infinite;
     animation-delay: 2s;
   }
-
+  .shimmer-text-align-fix {
+  vertical-align: baseline;
+  line-height: inherit;
+  font-size: inherit;
+}
   .shimmer-text::after {
     content: '';
     position: absolute;
