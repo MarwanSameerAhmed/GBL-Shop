@@ -11,6 +11,31 @@
 
 @endphp
 
+@push('styles')
+  <style>
+    @keyframes shimmer-subtle {
+      0% {
+        background-position: -200% 0;
+      }
+      100% {
+        background-position: 200% 0;
+      }
+    }
+    .shimmer-text-subtle {
+      background: linear-gradient(
+        90deg,
+        rgba(252, 200, 94, 0) 0%,
+        rgba(252, 200, 94, 0.4) 50%,
+        rgba(252, 200, 94, 0) 100%
+      );
+      background-size: 200% 100%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      animation: shimmer-subtle 4s infinite linear;
+    }
+  </style>
+@endpush
+
 @section('content')
 
   {{-- Spacer to clear fixed navbar --}}
@@ -77,9 +102,9 @@
       <h1 class="text-2xl md:text-3xl font-bold bg-clip-text text-black bg-gradient-to-r from-primary to-accent dark:text-white">
         {{ __('messages.Explore More Options') }}
       </h1>
-         {{-- <h1 class="text-2xl md:text-3xl font-bold bg-clip-text text-black bg-gradient-to-r from-primary to-accent dark:from-accent dark:to-primary">
-         {{' « '.$categoryName.' » ' }}
-      </h1> --}}
+      <h2 class="mt-2 text-xl font-semibold shimmer-text-subtle" style="color: #fcc85e;">
+        « {{ $categoryName }} »
+      </h2>
       <p class="text-gray-600 dark:text-gray-400 mt-2">
         {{ __('messages.Select a subcategory to view products') }}
       </p>
