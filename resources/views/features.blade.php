@@ -43,7 +43,7 @@
             <div class="mb-5 relative inline-flex">
                 <div class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center shadow-md group-hover:shadow-primary/50
                            group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                    <svg class="w-8 h-8 text-black dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-8 h-8 text-[#fcc85e] dark:text-[#fcc85e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ $feature['icon'] }}"/>
                     </svg>
                 </div>
