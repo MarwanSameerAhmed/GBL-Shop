@@ -35,6 +35,28 @@
 @section('title', __('messages.home'))
 
 @section('content')
+<style>
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%) rotate(10deg);
+    }
+    100% {
+      transform: translateX(100%) rotate(10deg);
+    }
+  }
+
+  .shimmer-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(110deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 60%);
+    animation: shimmer 4s infinite;
+    animation-delay: 2s;
+  }
+</style>
   {{-- Hero full‑width --}}
   <section
     id="hero"
@@ -60,17 +82,9 @@
           </p>
           <a
             href="{{ route('categories') }}"
-            class="group inline-flex items-center justify-center bg-[#fcc85e] text-gray-900 font-semibold py-3 px-10 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-[#fdd17a] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#fcc85e]"
+            class="shimmer-btn relative overflow-hidden inline-flex items-center justify-center bg-[#fcc85e] text-gray-900 font-semibold py-3 px-10 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-[#fdd17a] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#fcc85e]"
           >
             <span>{{ __('messages.cats') }}</span>
-            <span class="relative flex items-center justify-center h-6 w-6 ml-2">
-              <!-- Pinging halo -->
-              <span class="animate-ping absolute inline-flex h-5 w-5 rounded-full bg-gray-800 opacity-75"></span>
-              <!-- Arrow icon -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="relative h-6 w-6 text-gray-900 transition-transform duration-300 rtl:rotate-180 ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5-5 5M6 12h12" />
-              </svg>
-            </span>
           </a>
         </div>
 
