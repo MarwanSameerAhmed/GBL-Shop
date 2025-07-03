@@ -5,36 +5,7 @@
 @php
   use Illuminate\Support\Str;
   $isRtl = app()->getLocale() === 'ar';
-  $locale = app()->getLocale();
-  $nameField = $locale === 'ar' ? 'name' : 'en_name';
-  // Assume products are passed and have a 'subcategory' relationship
-  $subCategoryName = $products->isNotEmpty() ? data_get($products->first(), 'subcategory.' . $nameField, '') : '';
 @endphp
-
-@push('styles')
-  <style>
-    @keyframes shimmer-subtle {
-      0% {
-        background-position: -200% 0;
-      }
-      100% {
-        background-position: 200% 0;
-      }
-    }
-    .shimmer-text-subtle {
-      background: linear-gradient(
-        90deg,
-        rgba(252, 200, 94, 0) 0%,
-        rgba(252, 200, 94, 0.4) 50%,
-        rgba(252, 200, 94, 0) 100%
-      );
-      background-size: 200% 100%;
-      background-clip: text;
-      -webkit-background-clip: text;
-      animation: shimmer-subtle 4s infinite linear;
-    }
-  </style>
-@endpush
 
 @section('content')
   {{-- Spacer to offset fixed navbar --}}
@@ -112,12 +83,7 @@
       <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">
         {{ __('messages.products') }}
       </h1>
-      @if($subCategoryName)
-      <h2 class="mt-2 text-xl font-semibold shimmer-text-subtle" style="color: #fcc85e;">
-        « {{ $subCategoryName }} »
-      </h2>
-      @endif
-      <p class="text-gray-600 dark:text-gray-400 mt-4">
+      <p class="text-gray-600 dark:text-gray-400 mb-4">
         {{ __('messages.Explore our selection of premium products') }}
       </p>
       {{-- Search Bar --}}
