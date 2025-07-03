@@ -43,7 +43,7 @@
             $name   = app()->getLocale()==='ar'
                       ? data_get($product,'name')
                       : data_get($product,'en_name');
-            $thumb  = data_get($product,'images.0') ?: asset('images/placeholder.png');
+            $thumb  = data_get($product, 'image') ?: asset('images/placeholder.png');
             $prodId = Str::after(data_get($product,'route',''), '/Item/');
           @endphp
           <a href="{{ route('productDetails', $prodId) }}"
@@ -72,7 +72,7 @@
             $name   = app()->getLocale()==='ar'
                       ? data_get($product,'name')
                       : data_get($product,'en_name');
-            $thumb  = data_get($product,'images.0') ?: asset('images/placeholder.png');
+            $thumb  = data_get($product, 'image') ?: asset('images/placeholder.png');
             $prodId = Str::after(data_get($product,'route',''), '/Item/');
           @endphp
           <a href="{{ route('productDetails', $prodId) }}"
