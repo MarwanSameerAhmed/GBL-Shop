@@ -60,14 +60,17 @@
           </p>
           <a
             href="{{ route('categories') }}"
-            class="group inline-flex items-center justify-center overflow-hidden bg-[#fcc85e] text-gray-900 font-semibold py-3 px-10 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-[#fdd17a] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#fcc85e]"
+            class="group inline-flex items-center justify-center bg-[#fcc85e] text-gray-900 font-semibold py-3 px-10 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-[#fdd17a] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#fcc85e]"
           >
             <span>{{ __('messages.cats') }}</span>
-            <svg xmlns="http://www.w3.org/2000/svg" 
-                 class="h-6 w-0 opacity-0 transition-all duration-300 group-hover:w-6 group-hover:opacity-100 rtl:rotate-180 ml-0 group-hover:ml-2"
-                 fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5-5 5M6 12h12" />
-            </svg>
+            <span class="relative flex items-center justify-center h-6 w-6 ml-2">
+              <!-- Pinging halo -->
+              <span class="animate-ping absolute inline-flex h-5 w-5 rounded-full bg-gray-800 opacity-75"></span>
+              <!-- Arrow icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="relative h-6 w-6 text-gray-900 transition-transform duration-300 rtl:rotate-180 ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5-5 5M6 12h12" />
+              </svg>
+            </span>
           </a>
         </div>
 
