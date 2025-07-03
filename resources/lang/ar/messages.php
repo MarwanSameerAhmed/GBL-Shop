@@ -83,7 +83,11 @@ return [
   'ok' => 'حسناً',
 
   'Explore our selection of premium products'=>'إستكشف مجموعتنا من المنتجات الحصرية',
-  'no product'=>'لايوجد منتجات حاليا...'
+  'no product'=>'لايوجد منتجات حاليا...',
+
+  'contact_for_price' => 'تواصل للسعر',
+  'no_products_found_title' => 'لا توجد منتجات',
+  'no_products_found_text' => 'حاول البحث مرة أخرى أو استعرض تصنيفاتنا.'
 
 
 

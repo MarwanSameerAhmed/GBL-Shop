@@ -84,6 +84,10 @@ return [
    'Explore our selection of premium products'=>'Explore our selection of premium products',
      'no product'=>'No products available ...',
 
+  'contact_for_price' => 'Contact for Price',
+  'no_products_found_title' => 'No Products Found',
+  'no_products_found_text' => 'Try searching again or browse our categories.'
+
 
 
 

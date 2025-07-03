@@ -37,36 +37,56 @@
     {{-- === Content === --}}
     @if(! empty($latestProducts) && count($latestProducts) > 0)
       {{-- Grid on sm+ --}}
-      <div class="hidden sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div class="hidden sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         @foreach($latestProducts as $product)
           @php
             $name   = app()->getLocale()==='ar'
                       ? data_get($product,'name')
                       : data_get($product,'en_name');
+            $short_desc = app()->getLocale()==='ar'
+                      ? data_get($product,'short_description')
+                      : data_get($product,'en_short_description');
             $thumb  = data_get($product, 'image') ?: asset('images/placeholder.png');
             $prodId = Str::after(data_get($product,'route',''), '/Item/');
           @endphp
-          <a href="{{ route('productDetails', $prodId) }}"
-             class="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden transition-transform hover:scale-105">
-            <img src="{{ $thumb }}"
-                 alt="{{ $name }}"
-                 class="w-full h-48 object-cover group-hover:opacity-90 transition-opacity">
-            <div class="p-4">
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 truncate">
-                {{ $name }}
-              </h3>
-              <p class="text-primary font-bold">
-                {{ isset($product['price'])
-                   ? '$'.number_format($product['price'], 2)
-                   : __('Contact for price') }}
-              </p>
-            </div>
-          </a>
+          <div data-aos="fade-up" data-aos-delay="{{ ($loop->index % 4) * 100 }}">
+            <a href="{{ route('productDetails', $prodId) }}"
+               class="group block bg-white dark:bg-gray-800/50 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl dark:hover:shadow-indigo-500/20 hover:-translate-y-1.5 border border-gray-200 dark:border-gray-700">
+              <div class="overflow-hidden relative">
+                <img src="{{ $thumb }}"
+                     alt="{{ $name }}"
+                     class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1 truncate group-hover:text-indigo-600 dark:group-hover:text-purple-400 transition-colors">
+                  {{ $name }}
+                </h3>
+                @if($short_desc)
+                <p class="text-gray-500 dark:text-gray-400 text-sm mb-3 h-10">
+                    {{ Str::limit($short_desc, 50) }}
+                </p>
+                @endif
+                <div class="flex items-center justify-between mt-3">
+                    <p class="text-indigo-600 dark:text-purple-400 font-bold text-xl">
+                      {{ isset($product['price']) && $product['price'] > 0
+                         ? '$'.number_format($product['price'])
+                         : '' }}
+                    </p>
+                    @if(!isset($product['price']) || $product['price'] == 0)
+                      <span class="inline-block bg-yellow-100 dark:bg-yellow-800 text-yellow-800 dark:text-yellow-200 text-xs font-bold px-3 py-1 rounded-full">
+                        {{ __('messages.contact_for_price') }}
+                      </span>
+                    @endif
+                </div>
+              </div>
+            </a>
+          </div>
         @endforeach
       </div>
 
       {{-- Carousel on xs --}}
-      <div class="sm:hidden flex space-x-4 overflow-x-auto snap-x snap-mandatory -mx-2 px-2">
+      <div class="sm:hidden flex space-x-4 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 pb-4">
         @foreach($latestProducts as $product)
           @php
             $name   = app()->getLocale()==='ar'
@@ -76,27 +96,40 @@
             $prodId = Str::after(data_get($product,'route',''), '/Item/');
           @endphp
           <a href="{{ route('productDetails', $prodId) }}"
-             class="snap-center flex-shrink-0 w-1/2 bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden mx-2 transition-transform hover:scale-105">
-            <img src="{{ $thumb }}"
-                 alt="{{ $name }}"
-                 class="w-full h-40 object-cover">
+             class="group snap-center flex-shrink-0 w-3/4 bg-white dark:bg-gray-800/50 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out border border-gray-200 dark:border-gray-700">
+            <div class="overflow-hidden">
+              <img src="{{ $thumb }}"
+                   alt="{{ $name }}"
+                   class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out">
+            </div>
             <div class="p-3">
-              <h3 class="text-base font-semibold text-gray-900 dark:text-gray-100 truncate">
+              <h3 class="text-base font-semibold text-gray-900 dark:text-gray-100 truncate group-hover:text-indigo-600 dark:group-hover:text-purple-400 transition-colors">
                 {{ $name }}
               </h3>
-              <p class="text-primary font-bold">
-                {{ isset($product['price'])
-                   ? '$'.number_format($product['price'], 2)
-                   : __('Contact for price') }}
-              </p>
+              <div class="flex items-center justify-between mt-2">
+                  <p class="text-indigo-600 dark:text-purple-400 font-bold text-lg">
+                    {{ isset($product['price']) && $product['price'] > 0
+                       ? '$'.number_format($product['price'])
+                       : '' }}
+                  </p>
+                  @if(!isset($product['price']) || $product['price'] == 0)
+                    <span class="inline-block bg-yellow-100 dark:bg-yellow-800 text-yellow-800 dark:text-yellow-200 text-xs font-bold px-2 py-1 rounded-full">
+                      {{ __('messages.contact_for_price') }}
+                    </span>
+                  @endif
+              </div>
             </div>
           </a>
         @endforeach
       </div>
     @else
-      <p class="text-center text-gray-500 text-lg">
-        {{ __('No products available.') }}
-      </p>
+      <div class="text-center py-16">
+        <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m-9 1V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+        </svg>
+        <h3 class="mt-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('messages.no_products_found_title') }}</h3>
+        <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">{{ __('messages.no_products_found_text') }}</p>
+      </div>
     @endif
 
   </div>
