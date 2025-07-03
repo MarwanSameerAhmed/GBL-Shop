@@ -14,7 +14,7 @@
 {{-- Breadcrumb --}}
  <nav aria-label="Breadcrumb"
      class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md shadow-sm mb-6 mx-6 md:mx-auto max-w-7xl">
-  <ol class="flex flex-wrap items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+  <ol class="flex items-center space-x-2 overflow-x-auto whitespace-nowrap py-1 text-sm text-gray-600 dark:text-gray-400">
     {{-- Home --}}
     <li class="flex items-center space-x-1 group">
       <svg xmlns="http://www.w3.org/2000/svg"
