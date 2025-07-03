@@ -30,10 +30,10 @@
     </li>
 
     {{-- Separator --}}
-    {{-- <li class="animate-pulse">/</li> --}}
+    <li class="animate-pulse">/</li>
 
     {{-- Categories --}}
-    {{-- <li class="flex items-center space-x-1 group">
+    <li class="flex items-center space-x-1 group">
       <svg xmlns="http://www.w3.org/2000/svg"
            class="w-4 h-4 text-gray-500 group-hover:text-primary transition-colors duration-200 group-hover:animate-bounce"
            fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -42,9 +42,9 @@
       </svg>
       <a href="{{ route('categories') }}"
          class="hover:text-primary dark:hover:text-accent transition-colors duration-200">
-        {{ __('messages.cats') }}
+        {{ __('messages.catsNav') }}
       </a>
-    </li> --}}
+    </li>
 
     {{-- Separator --}}
     <li class="animate-pulse">/</li>

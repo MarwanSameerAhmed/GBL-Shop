@@ -47,7 +47,7 @@
       </svg>
       <a href="{{ route('categories') }}"
          class="hover:text-primary dark:hover:text-accent transition-colors duration-200">
-        {{ __('messages.cats') }}
+        {{ __('messages.catsNav') }}
       </a>
     </li>
 
@@ -107,7 +107,7 @@
             $url       = route('products',      $encodedId);
           }
 
-        
+
      $filename = data_get($sub, 'image');
   $image = $filename ? ltrim($filename, '/') : null;
     $imageUrl= $filename ? asset( $image)

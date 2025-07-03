@@ -78,7 +78,7 @@ $thumbs = array_map(fn($img) => asset(ltrim($img, '/')), array_slice($allImages,
       </svg>
       <a href="{{ route('categories') }}"
          class="hover:text-primary dark:hover:text-accent transition-colors duration-200">
-        {{ __('messages.cats') }}
+        {{ __('messages.catsNav') }}
       </a>
     </li>
 
