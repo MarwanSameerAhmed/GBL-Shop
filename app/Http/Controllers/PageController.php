@@ -54,10 +54,7 @@ class PageController extends Controller
     $categories = $this->fetch('Categories');
 
     // جلب أحدث المنتجات (مثلاً آخر 8)
-    $latestProducts = $this->fetch('Items', [
-        'sort'  => 'latest',
-        'limit' => 8,
-    ]);
+    $latestProducts = $this->fetch('LastItems');
 
     return view('home', compact('banners', 'categories', 'latestProducts'));
 }
