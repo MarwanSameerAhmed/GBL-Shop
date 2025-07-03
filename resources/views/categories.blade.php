@@ -9,6 +9,15 @@
 @endphp
 
 @section('content')
+<style>
+  .glowing-shadow {
+    box-shadow: 0 0 15px 5px rgba(252, 200, 94, 0.3), 0 0 25px 10px rgba(252, 200, 94, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  .glowing-shadow:hover {
+    box-shadow: 0 0 20px 8px rgba(252, 200, 94, 0.4), 0 0 35px 15px rgba(252, 200, 94, 0.25);
+  }
+</style>
 
   <section id="categories-header" class="py-25 bg-white dark:bg-gray-900 rounded-2xl">
     <div class="container mx-auto px-6 text-center">
@@ -30,7 +39,7 @@
     </div>
   </section>
 
-  <section id="categories-grid" class="py-8 bg-gray-100 dark:bg-gray-800 rounded-2xl">
+  <section id="categories-grid" class="py-8 bg-gray-100 dark:bg-gray-800 rounded-2xl glowing-shadow">
     <div class="container mx-auto px-4
                 grid grid-cols-2           <!-- 2 عمود على الشاشات الصغيرة -->
                      sm:grid-cols-3        <!-- 3 أعمدة من ≥640px -->
