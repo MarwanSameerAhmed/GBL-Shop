@@ -7,10 +7,10 @@
     {{-- === Header === --}}
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
         <div class="flex items-center space-x-3 rtl:space-x-reverse">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#fcc85e] animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l.35 1.08a1 1 0 00.95.69h1.137c.969 0 1.371 1.24.588 1.81l-.92.67a1 1 0 00-.364 1.118l.35 1.08c.3.921-.755 1.688-1.54 1.118l-.92-.67a1 1 0 00-1.176 0l-.92.67c-.785.57-1.84-.197-1.54-1.118l.35-1.08a1 1 0 00-.364-1.118l-.92-.67c-.783-.57-.38-1.81.588-1.81h1.137a1 1 0 00.95-.69l.35-1.08zM17 12.588l.962-.005a1 1 0 00.472-1.812l-.825-.56a1 1 0 01-.364-1.118l.35-1.08c.3-.921-.755-1.688-1.54-1.118L15.1 7.73a1 1 0 01-1.176 0l-.92-.67c-.785-.57-1.84.197-1.54 1.118l.35 1.08a1 1 0 01-.364 1.118l-.92.67c-.783-.57-.38 1.81.588 1.81h.962" />
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#fcc85e] animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-5 5a2 2 0 01-2.828 0l-7-7A2 2 0 013 8v-5c0-1.1.9-2 2-2z" />
             </svg>
-            <h2 class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#fcc85e] to-orange-500">
+            <h2 class="text-3xl font-extrabold text-[#fcc85e]">
                 {{ __('messages.latest_products') }}
             </h2>
         </div>
@@ -59,7 +59,7 @@
               @endphp
               <div class="swiper-slide h-auto pb-8">
                 <div data-aos="fade-up" data-aos-delay="{{ ($loop->index % 4) * 100 }}" class="h-full">
-                  <a href="{{ route('productDetails', $prodId) }}" class="group block bg-white dark:bg-gray-800/50 hover:bg-yellow-50/50 dark:hover:bg-[#fcc85e]/10 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl dark:hover:shadow-[#fcc85e]/20 hover:-translate-y-1.5 border border-gray-200 dark:border-gray-700 h-full flex flex-col">
+                  <a href="{{ route('productDetails', $prodId) }}" class="group block bg-white dark:bg-gray-800/50 hover:bg-gray-100 dark:hover:bg-gray-700/60 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl dark:hover:shadow-lg dark:hover:shadow-black/20 hover:-translate-y-1.5 border border-gray-200 dark:border-gray-700 h-full flex flex-col">
                     <div class="overflow-hidden relative">
                       <img src="{{ $thumb }}" alt="{{ $name }}" onerror="this.onerror=null; this.src='{{ asset('images/placeholder.png') }}';" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out">
                       <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
