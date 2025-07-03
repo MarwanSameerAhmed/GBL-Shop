@@ -58,7 +58,7 @@ return [
   'Contact via WhatsApp'=>'للتواصل عبر الواتس اب',
   'View More'=>'عرض المزيد',
   'view cat' => 'عرض الأصناف',
-  'view all' => 'عرض الكل',
+  'view_all' => 'عرض الكل',
   'product error'=>'تم تخطي منتج بسبب بيانات غير مكتملة:',
   'searching' => 'جاري البحث...',
 

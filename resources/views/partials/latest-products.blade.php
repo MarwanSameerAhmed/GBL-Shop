@@ -5,11 +5,21 @@
 <section id="latest-products" class="py-12 bg-white dark:bg-gray-900 rounded-lg mb-8">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     {{-- === Header === --}}
-    <div class="text-center mb-10">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500 dark:from-amber-400 dark:to-orange-400 inline-block relative pb-2">
-            {{ __('messages.latest_products') }}
-            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-2/3 h-1 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full"></span>
-        </h2>
+    <div class="flex justify-between items-baseline mb-8 border-b border-gray-200 dark:border-gray-700 pb-4">
+        <div>
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-white">
+                {{ __('messages.latest_products') }}
+            </h2>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                {{ __('messages.latest_products_subtext') }}
+            </p>
+        </div>
+        <a href="{{ route('products') }}" class="group inline-flex items-center text-sm font-medium text-[#fcc85e] hover:text-orange-500 dark:hover:text-amber-300 transition-colors duration-300 whitespace-nowrap">
+            <span>{{ __('messages.view_all') }}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform duration-300 {{ app()->getLocale() === 'ar' ? 'group-hover:-translate-x-1 mr-2' : 'group-hover:translate-x-1 ml-2' }}" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="{{ app()->getLocale() === 'ar' ? 'M7 16l-4-4m0 0l4-4m-4 4h18' : 'M17 8l4 4m0 0l-4 4m4-4H3' }}" />
+            </svg>
+        </a>
     </div>
 
     {{-- === Content === --}}

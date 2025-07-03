@@ -58,7 +58,7 @@ return [
       'Contact via WhatsApp'=>'Contact via WhatsApp',
         'View More'=>'view more',
         'view cat' =>'view categories',
-          'view all' => 'view more',
+          'view_all' => 'View All',
             'product error'=>'Product skipped due to incomplete data',
               'searching' => ' Searching...',
 
