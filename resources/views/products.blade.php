@@ -168,7 +168,7 @@
           {{-- الزر --}}
           <a
             href="{{ route('productDetails', $prodId) }}"
-            class="inline-block mt-3 px-2.5 py-1 bg-blue-600 dark:bg-blue-500 text-white text-xs font-medium rounded-full hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors"
+            class="inline-block mt-3 px-2.5 py-1 bg-[#fcc85e] dark:bg-[#fcc85e] text-white text-xs font-medium rounded-full hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors"
           >
             {{ __('messages.View More') }}
           </a>
