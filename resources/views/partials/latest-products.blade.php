@@ -5,21 +5,19 @@
 <section id="latest-products" class="py-12 bg-white dark:bg-gray-900 rounded-lg mb-8">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     {{-- === Header === --}}
-    <div class="flex justify-between items-baseline mb-8 border-b border-gray-200 dark:border-gray-700 pb-4">
-        <div>
-            <h2 class="text-3xl font-bold text-gray-800 dark:text-white">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
+        <div class="flex items-center space-x-3 rtl:space-x-reverse">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#fcc85e] animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l.35 1.08a1 1 0 00.95.69h1.137c.969 0 1.371 1.24.588 1.81l-.92.67a1 1 0 00-.364 1.118l.35 1.08c.3.921-.755 1.688-1.54 1.118l-.92-.67a1 1 0 00-1.176 0l-.92.67c-.785.57-1.84-.197-1.54-1.118l.35-1.08a1 1 0 00-.364-1.118l-.92-.67c-.783-.57-.38-1.81.588-1.81h1.137a1 1 0 00.95-.69l.35-1.08zM17 12.588l.962-.005a1 1 0 00.472-1.812l-.825-.56a1 1 0 01-.364-1.118l.35-1.08c.3-.921-.755-1.688-1.54-1.118L15.1 7.73a1 1 0 01-1.176 0l-.92-.67c-.785-.57-1.84.197-1.54 1.118l.35 1.08a1 1 0 01-.364 1.118l-.92.67c-.783-.57-.38 1.81.588 1.81h.962" />
+            </svg>
+            <h2 class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#fcc85e] to-orange-500">
                 {{ __('messages.latest_products') }}
             </h2>
-            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                {{ __('messages.latest_products_subtext') }}
-            </p>
         </div>
-        <a href="{{ route('products') }}" class="group inline-flex items-center text-sm font-medium text-[#fcc85e] hover:text-orange-500 dark:hover:text-amber-300 transition-colors duration-300 whitespace-nowrap">
-            <span>{{ __('messages.view_all') }}</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform duration-300 {{ app()->getLocale() === 'ar' ? 'group-hover:-translate-x-1 mr-2' : 'group-hover:translate-x-1 ml-2' }}" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="{{ app()->getLocale() === 'ar' ? 'M7 16l-4-4m0 0l4-4m-4 4h18' : 'M17 8l4 4m0 0l-4 4m4-4H3' }}" />
-            </svg>
-        </a>
+        <div class="hidden sm:block flex-grow border-t-2 border-yellow-200 dark:border-yellow-700/50 mx-6"></div>
+        <p class="mt-4 sm:mt-0 text-gray-600 dark:text-gray-400 italic">
+            {{ __('messages.latest_products_subtext') }}
+        </p>
     </div>
 
     {{-- === Content === --}}
@@ -61,7 +59,7 @@
               @endphp
               <div class="swiper-slide h-auto pb-8">
                 <div data-aos="fade-up" data-aos-delay="{{ ($loop->index % 4) * 100 }}" class="h-full">
-                  <a href="{{ route('productDetails', $prodId) }}" class="group block bg-white dark:bg-gray-800/50 hover:bg-amber-50/50 dark:hover:bg-[#fcc85e]/5 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-lg hover:shadow-amber-200/50 dark:hover:shadow-[#fcc85e]/10 hover:-translate-y-1 border border-gray-200 dark:border-gray-700 h-full flex flex-col">
+                  <a href="{{ route('productDetails', $prodId) }}" class="group block bg-white dark:bg-gray-800/50 hover:bg-yellow-50/50 dark:hover:bg-[#fcc85e]/10 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl dark:hover:shadow-[#fcc85e]/20 hover:-translate-y-1.5 border border-gray-200 dark:border-gray-700 h-full flex flex-col">
                     <div class="overflow-hidden relative">
                       <img src="{{ $thumb }}" alt="{{ $name }}" onerror="this.onerror=null; this.src='{{ asset('images/placeholder.png') }}';" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out">
                       <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
