@@ -9,10 +9,10 @@
         <h2 class="text-4xl font-extrabold text-[#fcc85e] dark:text-[#fcc85e] tracking-tight">
             {{ __('messages.latest_products') }}
         </h2>
-        <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-500 dark:text-gray-400">
+        <p class="mt-3 max-w-2xl mx-auto text-lg text-gray-500 dark:text-gray-400">
             {{ __('messages.latest_products_subtext') }}
         </p>
-        <div class="mt-6">
+        <div class="mt-4">
             <span class="inline-block w-20 h-1 bg-[#fcc85e] rounded"></span>
         </div>
     </div>
