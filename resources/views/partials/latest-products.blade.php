@@ -22,66 +22,35 @@
 
     {{-- === Content === --}}
     @if(!empty($latestProducts) && count($latestProducts) > 0)
-      <div x-data="{ swiper: null }" x-init="
-          swiper = new Swiper($refs.container, {
-              loop: {{ count($latestProducts) > 4 ? 'true' : 'false' }},
-              slidesPerView: 1.2,
-              spaceBetween: 16,
-              autoplay: {
-                  delay: 3500,
-                  disableOnInteraction: false,
-              },
-              pagination: {
-                  el: '.swiper-pagination',
-                  clickable: true,
-              },
-              navigation: {
-                  nextEl: '.swiper-button-next',
-                  prevEl: '.swiper-button-prev',
-              },
-              breakpoints: {
-                  640: {
-                      slidesPerView: 2.5,
-                      spaceBetween: 20,
+      <div x-data="{ swiper: null }" 
+           x-init="
+              swiper = new Swiper($refs.container, {
+                  loop: {{ count($latestProducts) > 4 ? 'true' : 'false' }},
+                  slidesPerView: 1.2,
+                  spaceBetween: 16,
+                  autoplay: {
+                      delay: 3500,
+                      disableOnInteraction: false,
                   },
-                  768: {
-                      slidesPerView: 3.5,
-                      spaceBetween: 20,
+                  pagination: {
+                      el: '.swiper-pagination',
+                      clickable: true,
                   },
-                  1024: {
-                      slidesPerView: 4.5,
-                      spaceBetween: 24,
+                  navigation: {
+                      nextEl: '.swiper-button-next',
+                      prevEl: '.swiper-button-prev',
                   },
-              },
-          });
-          $el.addEventListener('mouseenter', () => swiper.autoplay.stop());
-          $el.addEventListener('mouseleave', () => swiper.autoplay.start());
-      " class="relative overflow-hidden">"
-          swiper = new Swiper($refs.container, {
-              loop: {{ count($latestProducts) > 4 ? 'true' : 'false' }},
-              slidesPerView: 1.2,
-              spaceBetween: 16,
-              autoplay: {
-                  delay: 3500,
-                  disableOnInteraction: false,
-              },
-              pagination: {
-                  el: '.swiper-pagination',
-                  clickable: true,
-              },
-              navigation: {
-                  nextEl: '.swiper-button-next',
-                  prevEl: '.swiper-button-prev',
-              },
-              breakpoints: {
-                  640: { slidesPerView: 2, spaceBetween: 20 },
-                  768: { slidesPerView: 3, spaceBetween: 24 },
-                  1024: { slidesPerView: 4, spaceBetween: 24 },
-              }
-          });
-          $el.addEventListener('mouseenter', () => swiper.autoplay.stop());
-          $el.addEventListener('mouseleave', () => swiper.autoplay.start());
-      " class="relative overflow-hidden">
+                  breakpoints: {
+                      640: { slidesPerView: 2.5, spaceBetween: 20 },
+                      768: { slidesPerView: 3.5, spaceBetween: 20 },
+                      1024: { slidesPerView: 4.5, spaceBetween: 24 },
+                  },
+              });
+              $el.addEventListener('mouseenter', () => swiper.autoplay.stop());
+              $el.addEventListener('mouseleave', () => swiper.autoplay.start());
+           " 
+           class="relative overflow-hidden">
+
         <div class="swiper-container overscroll-x-contain" x-ref="container">
           <div class="swiper-wrapper">
             @foreach($latestProducts as $product)
