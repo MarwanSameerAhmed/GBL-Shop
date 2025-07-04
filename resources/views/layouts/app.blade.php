@@ -47,7 +47,6 @@
 
 
  <style>
-
   #page-loader {
     transition: opacity 0.3s ease;
   }
@@ -55,6 +54,44 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease 0.1s;
+  }
+
+  .gear-loader {
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .gear {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  .gear-1 {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23fcc85e"><path d="M97.2,50.1c0-5.8-1.5-11.4-4.2-16.4l-7.5-3.8c-1.3-0.7-2.9-0.4-3.9,0.8l-5.3,6.1c-3.2-2.1-6.8-3.7-10.6-4.8l-1.6-8.3c-0.3-1.5-1.6-2.6-3.1-2.6H48.1c-1.5,0-2.8,1.1-3.1,2.6l-1.6,8.3c-3.9,1.1-7.4,2.7-10.6,4.8l-5.3-6.1c-1-1.2-2.6-1.5-3.9-0.8l-7.5,3.8C7,38.7,5.5,44.3,5.5,50.1s1.5,11.4,4.2,16.4l7.5,3.8c1.3,0.7,2.9,0.4,3.9-0.8l5.3-6.1c3.2,2.1,6.8,3.7,10.6,4.8l1.6,8.3c0.3,1.5,1.6,2.6,3.1,2.6h13.7c1.5,0,2.8-1.1,3.1-2.6l1.6-8.3c3.9-1.1,7.4-2.7,10.6-4.8l5.3,6.1c1,1.2,2.6,1.5,3.9,0.8l7.5-3.8C95.7,61.5,97.2,55.9,97.2,50.1z M50,65.8c-8.7,0-15.8-7.1-15.8-15.8S41.3,34.2,50,34.2S65.8,41.3,65.8,50S58.7,65.8,50,65.8z"/></svg>');
+    animation-name: spin;
+  }
+  .gear-2 {
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23a0aec0"><path d="M97.2,50.1c0-5.8-1.5-11.4-4.2-16.4l-7.5-3.8c-1.3-0.7-2.9-0.4-3.9,0.8l-5.3,6.1c-3.2-2.1-6.8-3.7-10.6-4.8l-1.6-8.3c-0.3-1.5-1.6-2.6-3.1-2.6H48.1c-1.5,0-2.8,1.1-3.1,2.6l-1.6,8.3c-3.9,1.1-7.4,2.7-10.6,4.8l-5.3-6.1c-1-1.2-2.6-1.5-3.9-0.8l-7.5,3.8C7,38.7,5.5,44.3,5.5,50.1s1.5,11.4,4.2,16.4l7.5,3.8c1.3,0.7,2.9,0.4,3.9-0.8l5.3-6.1c3.2,2.1,6.8,3.7,10.6,4.8l1.6,8.3c0.3,1.5,1.6,2.6,3.1,2.6h13.7c1.5,0,2.8-1.1,3.1-2.6l1.6-8.3c3.9-1.1,7.4-2.7,10.6-4.8l5.3,6.1c1,1.2,2.6,1.5,3.9,0.8l7.5-3.8C95.7,61.5,97.2,55.9,97.2,50.1z M50,65.8c-8.7,0-15.8-7.1-15.8-15.8S41.3,34.2,50,34.2S65.8,41.3,65.8,50S58.7,65.8,50,65.8z"/></svg>');
+    animation-name: spin-reverse;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes spin-reverse {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
   }
 </style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -70,11 +107,11 @@
          opacity-100"
 >
   <div class="flex flex-col items-center">
-    <svg class="animate-spin h-12 w-12 text-primary dark:text-white mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-    d="M11.983 13.505a1.505 1.505 0 100-3.01 1.505 1.505 0 000 3.01zM20.488 13.35a8.02 8.02 0 00.035-2.703l1.635-1.274a.5.5 0 00.125-.631l-1.548-2.683a.5.5 0 00-.604-.23l-1.928.775a7.976 7.976 0 00-2.344-1.35L15.19 2.565a.5.5 0 00-.493-.395h-3.394a.5.5 0 00-.493.395l-.266 1.888a7.972 7.972 0 00-2.343 1.35l-1.928-.775a.5.5 0 00-.604.23L2.373 8.742a.5.5 0 00.125.631l1.635 1.274a8.02 8.02 0 000 2.703l-1.635 1.274a.5.5 0 00-.125.631l1.548 2.683a.5.5 0 00.604.23l1.928-.775a7.976 7.976 0 002.344 1.35l.266 1.888a.5.5 0 00.493.395h3.394a.5.5 0 00.493-.395l.266-1.888a7.972 7.972 0 002.343-1.35l1.928.775a.5.5 0 00.604-.23l1.548-2.683a.5.5 0 00-.125-.631l-1.635-1.274z" />
-</svg>
-    <span class="text-gray-600 dark:text-gray-400 font-medium">Loading…</span>
+    <div class="gear-loader mb-4">
+      <div class="gear gear-1"></div>
+      <div class="gear gear-2"></div>
+    </div>
+    <span class="text-gray-600 dark:text-gray-400 font-medium">{{ __('messages.Loading') }}</span>
   </div>
 </div>
 

@@ -55,6 +55,7 @@ return [
   'hero-footer' => 'Explore the best products with us. Quality assured, customer satisfaction guaranteed',
   'hero-mainPage' => 'Smart Industrial Solutions',
   'hero-mainPage-sub' => 'Discover reliable machinery and production lines to meet today’s industrial demands.',
+  'Loading' => 'Loading...',
         'View More'=>'view more',
         'view cat' =>'view categories',
           'view_all' => 'View All',
