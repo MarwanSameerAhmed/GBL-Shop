@@ -6,7 +6,7 @@
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     {{-- === Header === --}}
     <div class="text-center mb-12">
-        <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+        <h2 class="text-4xl font-extrabold text-[#fcc85e] dark:text-[#fcc85e] tracking-tight">
             {{ __('messages.latest_products') }}
         </h2>
         <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-500 dark:text-gray-400">
@@ -19,7 +19,7 @@
 
     {{-- === Content === --}}
     @if(!empty($latestProducts) && count($latestProducts) > 0)
-      <div x-data="{ swiper: null }" 
+      <div x-data="{ swiper: null }"
            x-init="
               swiper = new Swiper($refs.container, {
                   loop: {{ count($latestProducts) > 4 ? 'true' : 'false' }},
@@ -46,7 +46,7 @@
               });
               $el.addEventListener('mouseenter', () => swiper.autoplay.stop());
               $el.addEventListener('mouseleave', () => swiper.autoplay.start());
-           " 
+           "
            class="relative overflow-hidden">
 
         <div class="swiper-container overscroll-x-contain" x-ref="container">
