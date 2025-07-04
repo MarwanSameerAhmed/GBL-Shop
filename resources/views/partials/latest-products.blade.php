@@ -35,6 +35,11 @@
                   el: '.swiper-pagination',
                   clickable: true,
               },
+              // --- Fix for mobile vertical scrolling ---
+              touchStartPreventDefault: false, // Allow browser to handle vertical scroll
+              touchAngle: 35, // Make horizontal swipe detection stricter
+              touchReleaseOnEdges: true, // Release touch when at slider ends
+              // ----------------------------------------
               navigation: {
                   nextEl: '.swiper-button-next',
                   prevEl: '.swiper-button-prev',
