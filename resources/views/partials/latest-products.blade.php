@@ -5,19 +5,16 @@
 <section id="latest-products" class="py-12 bg-white dark:bg-gray-900 rounded-lg mb-8">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     {{-- === Header === --}}
-    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
-        <div class="flex items-center space-x-3 rtl:space-x-reverse">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#fcc85e] animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-5 5a2 2 0 01-2.828 0l-7-7A2 2 0 013 8v-5c0-1.1.9-2 2-2z" />
-            </svg>
-            <h2 class="text-3xl font-extrabold text-[#fcc85e]">
-                {{ __('messages.latest_products') }}
-            </h2>
-        </div>
-        <div class="hidden sm:block flex-grow border-t-2 border-yellow-200 dark:border-yellow-700/50 mx-6"></div>
-        <p class="mt-4 sm:mt-0 text-gray-600 dark:text-gray-400 italic">
+    <div class="text-center mb-12">
+        <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+            {{ __('messages.latest_products') }}
+        </h2>
+        <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-500 dark:text-gray-400">
             {{ __('messages.latest_products_subtext') }}
         </p>
+        <div class="mt-6">
+            <span class="inline-block w-20 h-1 bg-[#fcc85e] rounded"></span>
+        </div>
     </div>
 
     {{-- === Content === --}}
