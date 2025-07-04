@@ -94,11 +94,11 @@
   {{-- Hero full‑width --}}
   <section
     id="hero"
-    class="relative min-h-screen lg:h-screen overflow-visible bg-white dark:bg-gray-900"
+    class="relative min-h-[calc(100vh-80px)] md:min-h-screen flex items-center justify-center overflow-visible bg-white dark:bg-gray-900"
   >
     <div class="absolute inset-0"></div>
     <div
-      class="relative z-10 max-w-7xl mx-auto px-6 pt-32 lg:pt-50 pb-6"
+      class="relative z-10 max-w-7xl mx-auto px-6 pt-24 md:pt-32 lg:pt-40 pb-6"
     >
       <div class="flex flex-col md:flex-row items-start gap-8">
         <div data-aos="fade-right" class="text-black dark:text-white relative z-20">
@@ -127,7 +127,7 @@
           </a>
         </div>
 
-        <div data-aos="zoom-in" class="w-full md:w-1/2 -mt-16 flex justify-center">
+        <div data-aos="zoom-in" class="w-full md:w-1/2 -mt-8 md:-mt-16 flex justify-center">
           @php
             $lottie = "https://lottie.host/1e90c844-ec0c-4fab-88de-37132cc1794c/alSe2BEbXj.lottie";
           @endphp
