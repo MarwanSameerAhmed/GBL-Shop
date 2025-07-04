@@ -62,7 +62,7 @@
               @endphp
               <div class="swiper-slide h-auto pb-8">
                 <div data-aos="fade-up" data-aos-delay="{{ ($loop->index % 4) * 100 }}" class="h-full">
-                  <a href="{{ route('productDetails', $prodId) }}" class="group block bg-white dark:bg-gray-800/50 hover:bg-gray-50 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:shadow-gray-200/40 dark:hover:shadow-xl dark:hover:shadow-[#fcc85e]/20 hover:-translate-y-1.5 border border-gray-200 dark:border-gray-700 dark:hover:border-[#fcc85e]/40 h-full flex flex-col">
+                                    <a href="{{ route('productDetails', $prodId) }}" class="group block bg-white dark:bg-gray-800/50 hover:bg-gray-50 rounded-2xl shadow-md overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:shadow-gray-200/40 dark:hover:shadow-xl dark:hover:shadow-[#fcc85e]/20 hover:-translate-y-1.5 border border-gray-200 dark:border-gray-700 dark:hover:border-[#fcc85e]/40 h-full flex flex-col">
                     <div class="overflow-hidden relative">
                       <img src="{{ $thumb }}" alt="{{ $name }}" onerror="this.onerror=null; this.src='{{ asset('images/placeholder.png') }}';" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out">
                       <div class="absolute inset-0 bg-gradient-to-t from-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
