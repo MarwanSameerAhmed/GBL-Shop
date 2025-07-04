@@ -35,11 +35,6 @@
                   el: '.swiper-pagination',
                   clickable: true,
               },
-              // --- Fix for mobile vertical scrolling ---
-              touchStartPreventDefault: false, // Allow browser to handle vertical scroll
-              touchAngle: 35, // Make horizontal swipe detection stricter
-              touchReleaseOnEdges: true, // Release touch when at slider ends
-              // ----------------------------------------
               navigation: {
                   nextEl: '.swiper-button-next',
                   prevEl: '.swiper-button-prev',
@@ -53,7 +48,7 @@
           $el.addEventListener('mouseenter', () => swiper.autoplay.stop());
           $el.addEventListener('mouseleave', () => swiper.autoplay.start());
       " class="relative">
-        <div class="swiper-container" x-ref="container">
+        <div class="swiper-container overscroll-x-contain" x-ref="container">
           <div class="swiper-wrapper">
             @foreach($latestProducts as $product)
               @php
