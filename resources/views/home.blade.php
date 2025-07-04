@@ -81,6 +81,15 @@
   .animate-pulse-right {
     animation: subtle-pulse-right 2.5s ease-in-out infinite;
   }
+
+  @keyframes scroll-down {
+    0% { opacity: 0; transform: translateY(0); }
+    50% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(20px); }
+  }
+  .animate-scroll-down {
+    animation: scroll-down 2.2s ease-in-out infinite;
+  }
 </style>
   {{-- Hero full‑width --}}
   <section
@@ -133,6 +142,14 @@
           ></dotlottie-player>
         </div>
       </div>
+    </div>
+    {{-- Scroll Down Arrow --}}
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20">
+      <a href="#latest-products" aria-label="Scroll down">
+        <div class="w-8 h-14 border-2 border-gray-400 dark:border-gray-500 rounded-full flex justify-center items-start p-1">
+          <div class="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full animate-scroll-down"></div>
+        </div>
+      </a>
     </div>
   </section>
 
