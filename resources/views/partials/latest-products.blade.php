@@ -25,6 +25,7 @@
                   loop: {{ count($latestProducts) > 4 ? 'true' : 'false' }},
                   slidesPerView: 1,
                   spaceBetween: 16,
+                  centerInsufficientSlides: true,
                   autoplay: {
                       delay: 3500,
                       disableOnInteraction: false,
