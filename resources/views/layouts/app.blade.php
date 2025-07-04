@@ -17,13 +17,6 @@
     rel="stylesheet"
   />
 
-  {{-- Custom fonts for hero section --}}
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
-  {{-- Bitcount Grid Double is not on Google Fonts, using Bungee as a fallback --}}
-  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
-
   <style>
     :root {
       --tw-font-sans: 'Tajawal', sans-serif;
