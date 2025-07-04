@@ -91,9 +91,9 @@
     <div
       class="relative z-10 max-w-7xl mx-auto px-6 pt-32 lg:pt-50 pb-6"
     >
-      <div class="flex flex-col md:flex-row items-start gap-8">
-        <div data-aos="fade-right" class="text-black dark:text-white relative z-20">
-          <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight max-w-2xl">
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-y-8 md:gap-x-8">
+        <div data-aos="fade-right" class="w-full md:w-1/2 text-center md:text-left text-black dark:text-white relative z-20">
+          <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight max-w-2xl mx-auto md:mx-0">
             @php
                 $heroText = __('messages.hero-mainPage');
                 $lastWord = strrchr($heroText, ' ');
@@ -102,7 +102,7 @@
             {!! $firstPart !!}<br>
             <span class="shimmer-text relative inline-block overflow-hidden" style="color: #fcc85e;">{!! trim($lastWord) !!}</span>
           </h1>
-          <p class="text-lg md:text-xl mb-8 opacity-90 text-gray-800 dark:text-gray-300 max-w-xl">
+          <p class="text-lg md:text-xl mb-8 opacity-90 text-gray-800 dark:text-gray-300 max-w-xl mx-auto md:mx-0">
             {{ __('messages.hero-mainPage-sub') }}
           </p>
           <a
@@ -118,7 +118,7 @@
           </a>
         </div>
 
-        <div data-aos="zoom-in" class="w-full md:w-1/2 -mt-16 flex justify-center">
+        <div data-aos="zoom-in" class="w-full md:w-1/2 flex justify-center">
           @php
             $lottie = "https://lottie.host/1e90c844-ec0c-4fab-88de-37132cc1794c/alSe2BEbXj.lottie";
           @endphp
@@ -127,7 +127,7 @@
             src="{{ $lottie }}"
             background="transparent"
             speed="1"
-            style="width: 450px; height: 450px;"
+            class="w-full max-w-[300px] sm:max-w-[450px] h-auto"
             loop
             autoplay
           ></dotlottie-player>
