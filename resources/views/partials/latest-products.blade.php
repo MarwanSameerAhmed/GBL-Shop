@@ -26,7 +26,7 @@
            x-init="
               swiper = new Swiper($refs.container, {
                   loop: {{ count($latestProducts) > 4 ? 'true' : 'false' }},
-                  slidesPerView: 1.2,
+                  slidesPerView: 1,
                   spaceBetween: 16,
                   autoplay: {
                       delay: 3500,
